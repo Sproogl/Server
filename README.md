@@ -1,6 +1,9 @@
 # Server
 
-## 08.06.2016 ##
+| Job                               | State                                                                                                                                                             |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DBManager               | [![Build Status](https://ci.owncloud.org/job/client-build-matrix-linux/badge/icon)](https://github.com/watfmessagener/Client/tree/master/server/server)                       |
+
 
 
   Task
