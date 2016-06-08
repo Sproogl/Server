@@ -2,7 +2,7 @@
 
 | Job                               | State                                                                                                                                                             |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DBManager               | [![](http://s019.radikal.ru/i632/1606/ba/9bf1e3f5da4c.png)](https://github.com/watfmessagener/Client/tree/master/server/server)                       |
+| DBManager               | [![](http://i079.radikal.ru/1606/8b/a287aee41db2.png)](https://github.com/watfmessagener/Client/tree/master/server/server)                       |
 
 
 
