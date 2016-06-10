@@ -14,7 +14,7 @@ public interface IDBManager {
 
 
     /**
-     * Added new user to DB and returned his id
+     * Added new user to DB and returned his id ##method for testing##
      * @param login
      * @param password
      * @param email
@@ -30,7 +30,7 @@ public interface IDBManager {
      * @param password
      * @return id
      */
-    int SearchUser(String login,String password);
+    int searchUser(String login,String password) throws IOException;
 
     /**
      *  added new friend to DB
@@ -44,7 +44,7 @@ public interface IDBManager {
      * @param user_id
      * @return arraylist friend
      */
-    ArrayList<Integer> getFriendList(int user_id);
+    ArrayList<Integer> getFriendList(int user_id) throws IOException;
 
     /**
      * closed connection

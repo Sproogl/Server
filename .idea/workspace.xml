@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b07c6d-580f-4978-9e14-3f95552ef6b4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" afterPath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/DBManager/IDBManager.class" afterPath="$PROJECT_DIR$/target/classes/Server/DBManager/IDBManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Server/DBManager/DBManagerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/Server/DBManager/DBManagerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" afterPath="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
@@ -52,9 +56,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,13 +75,18 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1465488670754" expanded="true" signature="857:1198" placeholder=" INSERT statement (USERS)" />
-                <marker date="1465488670754" expanded="true" signature="1552:1644" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465488670754" expanded="true" signature="1552:1676" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465488670754" expanded="true" signature="1552:1679" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465588208268" expanded="true" signature="928:962" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465588208268" expanded="true" signature="928:990" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465588208268" expanded="true" signature="1276:1617" placeholder=" INSERT statement (USERS)" />
+                <marker date="1465588208268" expanded="true" signature="1949:2183" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465588208268" expanded="true" signature="2608:2700" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465588208268" expanded="true" signature="2608:2732" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465588208268" expanded="true" signature="2608:2735" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465588208268" expanded="true" signature="3023:3061" placeholder=" SELECT statement (FRIEND)" />
+                <marker date="1465588208268" expanded="true" signature="3023:3091" placeholder=" SELECT statement" />
               </folding>
             </state>
           </provider>
@@ -99,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,10 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IDBManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IDBManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43194193">
+            <state vertical-scroll-proportion="0.0">
               <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.13051823">
+              <caret line="4" column="253" selection-start-line="4" selection-start-column="253" selection-end-line="4" selection-end-column="253" />
               <folding />
             </state>
           </provider>
@@ -204,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
         <option value="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -499,36 +507,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Protocol" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ServerSproogl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="DBManager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -549,9 +527,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -577,85 +555,7 @@
       <recent name="E:\Server\ServerSproogl\Server\src\main\java\Server\DBManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DBManagerTest.AddfriendTest">
-    <configuration default="false" name="CPStestTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Server.Protocol.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ServerSproogl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Server.Protocol.Test" />
-      <option name="MAIN_CLASS_NAME" value="Server.Protocol.Test.CPStestTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DBManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Server.DBManager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ServerSproogl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Server.DBManager" />
-      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DBManagerTest.baseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Server.DBManager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ServerSproogl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Server.DBManager" />
-      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
-      <option name="METHOD_NAME" value="baseTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DBManagerTest">
     <configuration default="false" name="DBManagerTest.AdduserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -696,6 +596,84 @@
       <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
       <option name="METHOD_NAME" value="AddfriendTest" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DBManagerTest.searchFriendTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Server.DBManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ServerSproogl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Server.DBManager" />
+      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
+      <option name="METHOD_NAME" value="searchFriendTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DBManagerTest.getFrienListdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Server.DBManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ServerSproogl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Server.DBManager" />
+      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
+      <option name="METHOD_NAME" value="getFrienListdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DBManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Server.DBManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ServerSproogl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Server.DBManager" />
+      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -1038,19 +1016,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Mvn.DBManagerTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CPStestTest (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.baseTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.searchFriendTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DBManagerTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest.baseTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CPStestTest (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DBManagerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.searchFriendTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1068,35 +1046,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.09 at 19h 10m 35s.xml">
+    <history-entry file="DBManagerTest - 2016.06.10 at 23h 16m 34s.xml">
+      <configuration name="DBManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBManagerTest - 2016.06.10 at 23h 17m 20s.xml">
+      <configuration name="DBManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBManagerTest - 2016.06.10 at 23h 17m 58s.xml">
+      <configuration name="DBManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.10 at 22h 43m 12s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.09 at 19h 11m 24s.xml">
-      <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.09 at 19h 12m 21s.xml">
-      <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.09 at 19h 13m 37s.xml">
-      <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBManagerTest_AdduserTest - 2016.06.09 at 19h 03m 16s.xml">
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 38m 35s.xml">
       <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AdduserTest - 2016.06.09 at 19h 04m 38s.xml">
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 40m 15s.xml">
       <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AdduserTest - 2016.06.09 at 19h 05m 04s.xml">
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 40m 26s.xml">
       <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_baseTest - 2016.06.09 at 18h 31m 52s.xml">
-      <configuration name="DBManagerTest.baseTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 41m 55s.xml">
+      <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_baseTest - 2016.06.09 at 18h 32m 46s.xml">
-      <configuration name="DBManagerTest.baseTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 42m 42s.xml">
+      <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_baseTest - 2016.06.09 at 19h 03m 10s.xml">
-      <configuration name="DBManagerTest.baseTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_AdduserTest - 2016.06.10 at 22h 42m 50s.xml">
+      <configuration name="DBManagerTest.AdduserTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1110,18 +1088,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34142396" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.50323623" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16909385" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33217993" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33564013" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23139158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1178,7 +1156,7 @@
           <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="112" />
+      <option name="time" value="142" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1214,7 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,9 +1215,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,9 +1223,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1326,9 +1299,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,9 +1307,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,9 +1344,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,9 +1352,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1484,7 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="499" column="56" selection-start-line="499" selection-start-column="56" selection-end-line="499" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1506,10 +1470,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1465489035956" expanded="true" signature="368:763" placeholder="..." />
-            <marker date="1465489035956" expanded="true" signature="842:1250" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1541,7 +1502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1569,18 +1529,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="196" column="6" selection-start-line="196" selection-start-column="6" selection-end-line="196" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1593,20 +1553,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1616,24 +1576,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1465488670754" expanded="true" signature="857:1198" placeholder=" INSERT statement (USERS)" />
-            <marker date="1465488670754" expanded="true" signature="1552:1644" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465488670754" expanded="true" signature="1552:1676" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465488670754" expanded="true" signature="1552:1679" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465588208268" expanded="true" signature="928:962" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465588208268" expanded="true" signature="928:990" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465588208268" expanded="true" signature="1276:1617" placeholder=" INSERT statement (USERS)" />
+            <marker date="1465588208268" expanded="true" signature="1949:2183" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465588208268" expanded="true" signature="2608:2700" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465588208268" expanded="true" signature="2608:2732" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465588208268" expanded="true" signature="2608:2735" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465588208268" expanded="true" signature="3023:3061" placeholder=" SELECT statement (FRIEND)" />
+            <marker date="1465588208268" expanded="true" signature="3023:3091" placeholder=" SELECT statement" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43194193">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.13051823">
+          <caret line="4" column="253" selection-start-line="4" selection-start-column="253" selection-end-line="4" selection-end-column="253" />
+          <folding />
         </state>
       </provider>
     </entry>
