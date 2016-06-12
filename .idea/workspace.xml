@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b07c6d-580f-4978-9e14-3f95552ef6b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/IServerListeningThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/ServerListeningThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" afterPath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Main.class" afterPath="$PROJECT_DIR$/target/classes/Server/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Protocol/CPS.class" afterPath="$PROJECT_DIR$/target/classes/Server/Protocol/CPS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Protocol/ICPS.class" afterPath="$PROJECT_DIR$/target/classes/Server/Protocol/ICPS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/IServer.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/IServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/Server.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Server/Protocol/CPStestTest.class" afterPath="$PROJECT_DIR$/target/test-classes/Server/Protocol/CPStestTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/Server/Protocol/CPStestTest.java" afterPath="$PROJECT_DIR$/src/Test/Server/Protocol/CPStestTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Protocol/ICPS.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Protocol/ICPS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/IServer.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/IServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" />
     </list>
     <ignored path="ServerSproogl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.962963">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,15 +108,15 @@
               <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1465679023408" expanded="true" signature="977:1011" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465679023408" expanded="true" signature="977:1039" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465679023408" expanded="true" signature="1325:1666" placeholder=" INSERT statement (USERS)" />
-                <marker date="1465679023408" expanded="true" signature="1998:2232" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465679023408" expanded="true" signature="2657:2749" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465679023408" expanded="true" signature="2657:2781" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465679023408" expanded="true" signature="2657:2784" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465679023408" expanded="true" signature="3072:3110" placeholder=" SELECT statement (FRIEND)" />
-                <marker date="1465679023408" expanded="true" signature="3072:3140" placeholder=" SELECT statement" />
+                <marker date="1465730888099" expanded="true" signature="977:1011" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465730888099" expanded="true" signature="977:1039" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465730888099" expanded="true" signature="1325:1666" placeholder=" INSERT statement (USERS)" />
+                <marker date="1465730888099" expanded="true" signature="1998:2232" placeholder=" SELECT statement (USERS)" />
+                <marker date="1465730888099" expanded="true" signature="2657:2749" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465730888099" expanded="true" signature="2657:2781" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465730888099" expanded="true" signature="2657:2784" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1465730888099" expanded="true" signature="3072:3110" placeholder=" SELECT statement (FRIEND)" />
+                <marker date="1465730888099" expanded="true" signature="3072:3140" placeholder=" SELECT statement" />
               </folding>
             </state>
           </provider>
@@ -239,9 +219,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/IServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" />
       </list>
     </option>
   </component>
@@ -1141,7 +1121,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1548,15 +1528,15 @@
           <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1465679023408" expanded="true" signature="977:1011" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465679023408" expanded="true" signature="977:1039" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465679023408" expanded="true" signature="1325:1666" placeholder=" INSERT statement (USERS)" />
-            <marker date="1465679023408" expanded="true" signature="1998:2232" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465679023408" expanded="true" signature="2657:2749" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465679023408" expanded="true" signature="2657:2781" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465679023408" expanded="true" signature="2657:2784" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465679023408" expanded="true" signature="3072:3110" placeholder=" SELECT statement (FRIEND)" />
-            <marker date="1465679023408" expanded="true" signature="3072:3140" placeholder=" SELECT statement" />
+            <marker date="1465730888099" expanded="true" signature="977:1011" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465730888099" expanded="true" signature="977:1039" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465730888099" expanded="true" signature="1325:1666" placeholder=" INSERT statement (USERS)" />
+            <marker date="1465730888099" expanded="true" signature="1998:2232" placeholder=" SELECT statement (USERS)" />
+            <marker date="1465730888099" expanded="true" signature="2657:2749" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465730888099" expanded="true" signature="2657:2781" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465730888099" expanded="true" signature="2657:2784" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1465730888099" expanded="true" signature="3072:3110" placeholder=" SELECT statement (FRIEND)" />
+            <marker date="1465730888099" expanded="true" signature="3072:3140" placeholder=" SELECT statement" />
           </folding>
         </state>
       </provider>
@@ -1574,7 +1554,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.962963">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
