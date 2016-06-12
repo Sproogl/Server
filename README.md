@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-# Server
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+
+
 #### 10.06.2016
 | Job       | link           | State  |
 | ------------- |:-------------:| -----:|
@@ -16,19 +11,11 @@
  
 <H4>Server </H4>
 
-<<<<<<< HEAD
-<H4>Server </H4>
-
-=======
->>>>>>> origin/master
 | class name       | link           | State  |
 | ------------- |:-------------:| -----:|
 | Server      | [![](http://www.fancyicons.com/free-icons/232/programming/png/24/external_link_24.png)](https://github.com/watfmessagener/Server/tree/master/src/main/java/Server/DBManager) | [![](http://s.iconland.ru/icon/57/56ecaa5d96d57.png)](https://github.com/watfmessagener/Server) |
 | ServerListeningThread      | [![](http://www.fancyicons.com/free-icons/232/programming/png/24/external_link_24.png)](https://github.com/watfmessagener/Server/tree/master/src/main/java/Server/Server) | [![](http://s.iconland.ru/icon/57/56ecaa5d96d57.png)](https://github.com/watfmessagener/Server) |
 | NewConnection     | [![](http://www.fancyicons.com/free-icons/232/programming/png/24/external_link_24.png)](https://github.com/watfmessagener/Server/tree/master/src/main/java/Server/Protocol) | [![](http://s.iconland.ru/icon/57/56ecaa5d96d57.png)](https://github.com/watfmessagener/Server) |
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 
