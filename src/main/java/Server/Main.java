@@ -11,7 +11,12 @@ public class Main  {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NullPointerException {
 
     Server server = new Server(1332);
-        server.start();
+        try {
+            server.start();
+        }catch (IOException e)
+        {
+            System.err.print(e);
+        }
     return;
 
 }

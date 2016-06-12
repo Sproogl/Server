@@ -1,4 +1,6 @@
 package Server.DBManager;
+import Server.Server.Server;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -18,15 +20,14 @@ public class DBManager implements IDBManager {
     Connection connection;
     Statement statement;
 
-    DBManager() throws IOException {
+    public DBManager() throws IOException {
 
         try {
-
             connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
             statement = connection.createStatement();
             if(connection.isClosed())
             {
-                throw new IOException("error connection");
+                throw new IOException("error connection to data base");
             }
         } catch (SQLException e) {
             throw new IOException(e);

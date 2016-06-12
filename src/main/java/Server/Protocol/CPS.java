@@ -11,10 +11,19 @@ public class CPS implements ICPS {
     public int ID_DEST;
     public int MSG_LEN;
     public String MSG;
+
     public CPS(byte type){
 
         this.type = type;
+        ID_DEST = 0;
+        ID_SRC=0;
+        MSG_LEN = 10;
+        MSG = "disconnect";
 
+    }
+
+    public CPS(byte []array){
+         this.toCPS(array);
     }
 
     public byte[] toByte(){
@@ -69,6 +78,19 @@ public class CPS implements ICPS {
         return buf;
     }
 
+    public String getLogin() {
+        int index = MSG.indexOf("/");
+        String login = MSG.substring(0,index);
+        return login;
+    }
+
+    public String getPassword() {
+        int indexstart = MSG.indexOf("/");
+        int indexend = MSG.indexOf("\\");
+        String password = MSG.substring(indexstart+1,indexend);
+        return password;
+    }
+
     private byte[] contact(byte[] A, byte[] B) {
         int aLen = A.length;
         int bLen = B.length;
@@ -77,4 +99,6 @@ public class CPS implements ICPS {
         System.arraycopy(B, 0, C, aLen, bLen);
         return C;
     }
+
+
 }

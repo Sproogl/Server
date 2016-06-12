@@ -24,7 +24,7 @@ public class CPStestTest {
         actualMSG = new String[10];
 
         actualMSG[0] = "none";
-        actualMSG[1] = "login password";
+        actualMSG[1] = "login/password\\";
         actualMSG[2] = "papa jons";
         actualMSG[3] = "vsia popol";
         actualMSG[4] = "fdfdfdgd;lfgdfgdfgdfg gfghfghfghfghfg";
@@ -75,6 +75,22 @@ public class CPStestTest {
             expected = cps.BytetoInt(array,0);
             assertEquals(expected, actual);
         }
+
+    }
+
+
+    @Test
+    public void testGetLoginPassword() throws Exception {
+
+        String actualLogin = "login";
+        String actualPassword = "password";
+        cps.MSG = actualMSG[1];
+
+        String expectedlogin = cps.getLogin();
+        String expectedPassword = cps.getPassword();
+
+        assertEquals(expectedlogin, actualLogin);
+        assertEquals(expectedPassword, actualPassword);
 
     }
 

@@ -3,6 +3,9 @@ import Server.Protocol.CPS;
 
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
+import java.util.concurrent.*;
+import java.util.logging.Logger;
 
 
 /**
@@ -10,42 +13,63 @@ import java.io.*;
  */
 public class Server {
 
-    private CPS CPSmessage;
-    private ServerSocket socket;
     private int port;
-
+    public static ConcurrentHashMap<Integer,Socket> userSession;
+    private static Logger log = Logger.getLogger(Server.class.getName());
+    ServerListeningThread serverThread;
     public Server(int port) {
 
         this.port = port;
-        CPSmessage = new CPS((byte)0);
+        userSession = new ConcurrentHashMap<Integer, Socket>();
+        serverThread = new ServerListeningThread(port);
     }
 
-    public int start() throws IOException, ClassNotFoundException, NullPointerException {
-        InputStream in = null;
-        OutputStream out = null;
+    public void start() throws IOException, ClassNotFoundException, NullPointerException {
 
-        socket = new ServerSocket(port);
 
-        Socket newsock = socket.accept();
+        serverThread.start();
 
-        in = newsock.getInputStream();
+        if(!serverThread.isAlive()){
+            throw  new IOException("error server");
+        }
 
-        byte[] mesg = new byte[520];
-        in.read(mesg);
+        System.out.println("Server started \n");
 
-        CPSmessage.toCPS(mesg);
+        Scanner scan = new Scanner(System.in);
+        int s = 1;
+        System.out.print("Enter 0 for stopped server : ");
+        while(s!=0) {
+            s = scan.nextInt();
+        }
+        stop();
+        System.out.println("Server stopped: ");
 
-        CPSmessage.ID_SRC = 100;
-        out = newsock.getOutputStream();
-        out.write(CPSmessage.toByte());
-        in.close();
-        out.close();
-        newsock.close();
-        return 1;
     }
 
-    public int stop() {
-        return 1;
+
+
+
+
+    public void stop() {
+        serverThread.interrupt();
+        System.out.println("wait... ");
+        try {
+            Socket closeSocket = new Socket(InetAddress.getByName("127.0.0.1"),1332);
+            OutputStream out = closeSocket.getOutputStream();
+            out.write(new CPS((byte)104).toByte());
+            out.close();
+            closeSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while(serverThread.isAlive())
+        {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 

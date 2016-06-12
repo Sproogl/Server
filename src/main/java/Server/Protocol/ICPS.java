@@ -33,4 +33,17 @@ public interface ICPS {
      */
     byte[] intToByte(int val);
 
+
+    /**
+     * returned login from message
+     * @return
+     */
+    String getLogin();
+
+    /**
+     * returned password from message
+     * @return
+     */
+    String getPassword();
+
 }
