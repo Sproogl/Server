@@ -1,5 +1,7 @@
 package Server.DBManager;
+import Server.Server.Friends;
 import Server.Server.Server;
+import Server.Server.User;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,36 +84,60 @@ public class DBManager implements IDBManager {
             return id;
     }
 
-    public void addFriend(int id_user, int id_newFriend) throws IOException {
+    public void addFriend(User user, User friend) throws IOException {
 
-        String reqest = "insert into friends(user_id,friend_id) values("+
-                id_user+
+        String reqest = "insert into friends(user_id,friend_id,friend_login) values("+
+                user.id+
                 ","+
-                id_newFriend+");";
+                friend.id+",'"+
+                friend.login+"');";
+        String reqestmirror = "insert into friends(user_id,friend_id,friend_login) values("+
+                friend.id+
+                ","+
+                user.id+",'"+
+                user.login+"');";
         try {
             statement.execute(reqest);
+            statement.execute(reqestmirror);
         } catch (SQLException e) {
             throw new IOException(e);
         }
     }
 
-    public ArrayList<Integer> getFriendList(int user_id) throws  IOException {
-        ArrayList<Integer> id = null;
+    public void deleteFriend(User user, User friend) throws IOException {
+        String reqest = "delete from friends where user_id="+
+                user.id+
+                " and friend_id = "+
+                friend.id+";";
+        String reqestmirror = "delete from friends where user_id="+
+                friend.id+
+                " and friend_id = "+
+                user.id+";";
+        try {
+            statement.execute(reqest);
+            statement.execute(reqestmirror);
+        } catch (SQLException e) {
+            throw new IOException(e);
+        }
+    }
+
+    public ArrayList<Friends> getFriendList(int user_id) throws  IOException {
+        ArrayList<Friends> userlist = null;
         String reqest = "select * from friends where user_id ='"
                 +user_id+"';";
         try {
             ResultSet resultSet = statement.executeQuery(reqest);
-            id = new ArrayList<Integer>();
+            userlist = new ArrayList<Friends>();
             while (resultSet.next())
             {
-                id.add(resultSet.getInt(2));
+                userlist.add(new Friends(resultSet.getString(3),resultSet.getInt(2)));
             }
             resultSet.close();
         } catch (SQLException e) {
             throw new IOException(e);
         }
 
-        return id;
+        return userlist;
     }
 
     public void close() throws IOException {

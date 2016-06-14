@@ -14,13 +14,13 @@ import java.util.logging.Logger;
 public class Server {
 
     private int port;
-    public static ConcurrentHashMap<Integer,Socket> userSession;
+    public static ConcurrentHashMap<Integer,User> userSession;
     private static Logger log = Logger.getLogger(Server.class.getName());
     ServerListeningThread serverThread;
     public Server(int port) {
 
         this.port = port;
-        userSession = new ConcurrentHashMap<Integer, Socket>();
+        userSession = new ConcurrentHashMap<Integer,User>();
         serverThread = new ServerListeningThread(port);
     }
 

@@ -1,5 +1,6 @@
 package Server.DBManager;
 
+import Server.Server.User;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -44,7 +45,8 @@ public class DBManagerTest {
 
         try {
             DBManager db = new DBManager();
-            db.addFriend(10,15);
+            db.addFriend(new User("admin",1,null,null),new User("den",2,null,null));
+            //db.deleteFriend(new User("den",1,null,null),new User("tom",2,null,null));
             db.close();
         } catch (IOException e) {
             System.err.print(e);
@@ -72,10 +74,10 @@ public class DBManagerTest {
 
     @Test
     public  void getFrienListdTest(){
-        ArrayList<Integer> id=null;
+        ArrayList<User> id=null;
         try {
             DBManager db = new DBManager();
-            id = db.getFriendList(10);
+            //id = db.getFriendList(1);
             db.close();
         } catch (IOException e) {
             System.err.print(e);

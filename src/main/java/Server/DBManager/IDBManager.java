@@ -1,5 +1,8 @@
 package Server.DBManager;
 
+import Server.Server.Friends;
+import Server.Server.User;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -10,7 +13,7 @@ public interface IDBManager {
 
     public static final String URL        =  "jdbc:mysql://127.0.0.1:3306/userssproogl";
     public static  final String LOGIN     =  "root";
-    public  static  final String PASSWORD =  "*****";
+    public  static  final String PASSWORD =  "******";
 
 
     /**
@@ -34,17 +37,25 @@ public interface IDBManager {
 
     /**
      *  added new friend to DB
-     * @param id_user
-     * @param id_newFriend
+     * @param user
+     * @param friend
      */
-    void addFriend(int id_user , int id_newFriend) throws IOException;
+    void addFriend(User user , User friend) throws IOException;
 
     /**
      *  returned arraylist friends this user
      * @param user_id
      * @return arraylist friend
      */
-    ArrayList<Integer> getFriendList(int user_id) throws IOException;
+
+    /**
+     *
+     * @param user
+     * @param friend
+     */
+    void deleteFriend(User user, User friend) throws IOException;
+
+    ArrayList<Friends> getFriendList(int user_id) throws IOException;
 
     /**
      * closed connection

@@ -22,6 +22,15 @@ public class CPS implements ICPS {
 
     }
 
+    public  CPS(int id){
+        type = 104;
+        ID_DEST = id;
+        ID_SRC = id;
+        MSG_LEN = 5;
+        MSG = "test\0";
+
+
+    }
     public CPS(byte []array){
          this.toCPS(array);
     }

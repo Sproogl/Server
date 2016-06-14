@@ -30,7 +30,8 @@ public class ServerListeningThread extends Thread implements IServerListeningThr
         try {
             serverSocket = new ServerSocket(port);
         }catch (IOException e) {
-            close();
+            executor.shutdownNow();
+            return;
         }
 
 

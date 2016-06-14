@@ -2,7 +2,9 @@ package Server.Server;
 
 import Server.Protocol.CPS;
 
+import java.io.IOException;
 import java.net.Socket;
+import java.util.ArrayList;
 
 /**
  * Created by Denis on 12.06.2016.
@@ -29,15 +31,15 @@ public interface INewConnection {
 
     /**
      * Send messageDest to socketDest
-     * @param socketDest # this socket of Server.userSession! #
+     * @param userDest # this socket of Server.userSession! #
      * @param messageDest
      */
-    void sendMessage(Socket socketDest,Socket socketSrc ,CPS messageDest);
+    void sendMessage(User userDest,Socket socketSrc ,CPS messageDest);
 
 
     void addFriend(Socket socketUser, CPS messageReqest);
 
-    void onlineFriendsList(Socket socketUser , CPS messageUser);
+    void onlineFriendsList(Socket socketUser , CPS messageUser,ArrayList<Friends> friends);
 
 
     /**
@@ -46,5 +48,8 @@ public interface INewConnection {
      * @param messageUser
      */
     void disconnectionUser(Socket socketUser , CPS messageUser);
+
+    boolean incorrectDisconnected(Socket socketUser,CPS testMessage);
+
 
 }

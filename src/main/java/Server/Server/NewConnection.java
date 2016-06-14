@@ -2,11 +2,13 @@ package Server.Server;
 
 import Server.DBManager.DBManager;
 import Server.Protocol.CPS;
+import com.sun.org.apache.bcel.internal.generic.SWAP;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
@@ -106,52 +108,95 @@ public class NewConnection implements Runnable , INewConnection {
 
     public void registrationUser(Socket socketUser, CPS messageUser) {
 
-        try{
-            OutputStream out = socketUser.getOutputStream();
-            Integer id = dbManager.searchUser(message.getLogin(),message.getPassword());
+        Integer id=0;
+        try {
 
-            message.ID_SRC = id;
+                OutputStream out = socketUser.getOutputStream();
+                id = dbManager.searchUser(messageUser.getLogin(), messageUser.getPassword());
+                User user = Server.userSession.get(id);
+            if (user == null) {
+                messageUser.ID_SRC = id;
+                out = socket.getOutputStream();
+                out.write(messageUser.toByte());
+                out.close();
+                socketUser.close();
+            }
+            else
+            {
+                if(incorrectDisconnected(user.getSocket(),new CPS(id))){
+                    messageUser.ID_SRC = id;
+                    out = socket.getOutputStream();
+                    out.write(messageUser.toByte());
+                }
+                out.close();
+                socketUser.close();
+            }
+            }catch(IOException e){
+                Server.userSession.remove(id);
+                e.printStackTrace();
+            }
 
-            out = socket.getOutputStream();
-            out.write(message.toByte());
-            out.close();
-            socketUser.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void connectionUser(Socket socketUser, CPS messageUser) {
-        if(Server.userSession.get(message.ID_SRC)==null)
-            Server.userSession.put(message.ID_SRC,socketUser);
+
+        try {
+        if(Server.userSession.get(message.ID_SRC)==null) {
+           User user = new User(message.MSG,message.ID_SRC,
+                                socketUser,
+                                dbManager.getFriendList(messageUser.ID_SRC));
+
+            onlineFriendsList(socketUser,messageUser,user.getFriend());
+            Server.userSession.put(message.ID_SRC, user);
+
+        }
         else{
             messageUser.type = (byte)104;
-            try {
+
                 OutputStream out = socketUser.getOutputStream();
                 out.write(messageUser.toByte());
                 out.close();
                 socketUser.close();
-            } catch (IOException e) {
+            }
+        } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+
     }
 
-    public void sendMessage(Socket socketDest,Socket socketSrc ,CPS messageDest) {
+    public void sendMessage(User userDest,Socket socketSrc ,CPS messageDest) {
         try {
-            if(socketDest != null)
-            {
+        if(userDest == null)
+        {
+
+                messageDest.type = 106;
+                OutputStream out = Server.userSession.get(messageDest.ID_SRC).getSocket().getOutputStream();
+            out.write(messageDest.toByte());
+
+            socketSrc.close();
+
+
+
+            return;
+        }
+        Socket socketDest = userDest.getSocket();
+        if(incorrectDisconnected(socketDest,messageDest))
+        {
+
+
+                messageDest.type = 106;
+            OutputStream out = Server.userSession.get(messageDest.ID_SRC).getSocket().getOutputStream();
+            out.write(messageDest.toByte());
+                out.write(messageDest.toByte());
+            socketSrc.close();
+
+
+            return;
+        }
+
                 OutputStream Lout = socketDest.getOutputStream();
                 Lout.write(message.toByte());
                 socketSrc.close();
-            }
-            else
-            {
-                OutputStream out = socketSrc.getOutputStream();
-                message.type= (byte)104;
-                out.write(message.toByte());
-            }
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -160,30 +205,128 @@ public class NewConnection implements Runnable , INewConnection {
 
     public void addFriend(Socket socketUser, CPS messageReqest) {
 
+
     }
 
-    public void onlineFriendsList(Socket socketUser, CPS messageUser) {
+    public void onlineFriendsList(Socket socketUser, CPS messageUser,ArrayList<Friends> friends) {
 
+        try {
+            OutputStream out = socketUser.getOutputStream();
+            Friends friend;
+            friends = dbManager.getFriendList(messageUser.ID_SRC);
+            int size = friends.size();
+
+            while(size!=0)
+            {
+                friend = friends.get(size-1);
+
+                User user = null;
+                user =  Server.userSession.get(friend.id);
+
+                if(user != null)
+                {
+                    if(!incorrectDisconnected(user.getSocket(),new CPS(user.id))) {
+                        Socket friendSocket = user.getSocket();
+
+                        messageUser.type = 105;
+
+                        OutputStream outFriend = friendSocket.getOutputStream();
+                        messageUser.MSG += "\0";
+                        messageUser.ID_DEST = messageUser.ID_SRC;
+                        outFriend.write(messageUser.toByte());
+
+                        messageUser.ID_DEST = friend.id;
+                        messageUser.MSG = friend.login + "\0";
+                        out.write(messageUser.toByte());
+                    }
+                    else {
+                        messageUser.type = 106;
+                        messageUser.ID_DEST=friend.id;
+                        messageUser.MSG = friend.login+"\0";
+                        out.write(messageUser.toByte());
+                    }
+
+                }else
+                {
+                    messageUser.type = 106;
+                    messageUser.ID_DEST=friend.id;
+                    messageUser.MSG = friend.login+"\0";
+                    out.write(messageUser.toByte());
+                }
+
+                size--;
+            }
+
+        }catch (IOException e)
+        {
+            System.err.print(e);
+        }
     }
 
     public void disconnectionUser(Socket socketUser, CPS messageUser)  {
 
-        Socket delsocket = Server.userSession.get(messageUser.ID_SRC);
-        if(delsocket != null)
-
-        {
-            try {
-                delsocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            disconnectFriendList(socketUser,messageUser);
             Server.userSession.remove(messageUser.ID_SRC);
-        }
+
         try {
             socketUser.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.print(e);
         }
+
+    }
+
+    public boolean incorrectDisconnected(Socket socketUser, CPS testMessage) {
+        int id = testMessage.ID_DEST;
+        try{
+        if(socketUser==null)
+        {
+            Server.userSession.remove(id);
+            socketUser.close();
+            return true;
+        }
+        else
+        {
+
+            OutputStream out = socketUser.getOutputStream();
+            out.write(testMessage.toByte());
+            out.write(testMessage.toByte());
+            out.write(testMessage.toByte());
+            return false;
+        }
+        }catch(IOException e){
+            Server.userSession.remove(id);
+            return true;
+        }
+
+    }
+
+
+    public void disconnectFriendList(Socket socketUser, CPS messageUser){
+        User user = Server.userSession.get(messageUser.ID_SRC);
+        messageUser.ID_DEST = messageUser.ID_SRC;
+        messageUser.type = 106;
+        ArrayList<Friends> friendList = null;
+        OutputStream outL = null;
+        if(user!=null)
+        {
+            friendList = user.getFriend();
+            int i = friendList.size();
+            while(i!=0){
+                try {
+                    User userF = Server.userSession.get(friendList.get(i-1).id);
+                    if(userF !=null) {
+                        outL = userF.getSocket().getOutputStream();
+                        outL.write(messageUser.toByte());
+                    }
+                }catch (IOException e)
+                {
+
+                }
+                i--;
+            }
+        }
+
 
     }
 }
