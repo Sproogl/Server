@@ -7,26 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65b07c6d-580f-4978-9e14-3f95552ef6b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/ServerSproogl_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/Friends.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" afterPath="$PROJECT_DIR$/target/classes/Server/DBManager/DBManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/DBManager/IDBManager.class" afterPath="$PROJECT_DIR$/target/classes/Server/DBManager/IDBManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ServerSproogl_jar/ServerSproogl.jar" afterPath="$PROJECT_DIR$/out/artifacts/ServerSproogl_jar/ServerSproogl.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/INewConnection.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/INewConnection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/NewConnection.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/NewConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/Server.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Server/Server/ServerListeningThread.class" afterPath="$PROJECT_DIR$/target/classes/Server/Server/ServerListeningThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Server/DBManager/DBManagerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/Server/DBManager/DBManagerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" afterPath="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" afterPath="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/Friends.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/Friends.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Server/Server/ServerListeningThread.java" afterPath="$PROJECT_DIR$/src/main/java/Server/Server/ServerListeningThread.java" />
     </list>
     <ignored path="ServerSproogl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,20 +61,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+              <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerListeningThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/ServerListeningThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -113,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Friends.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -123,27 +103,66 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+              <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
               <folding>
-                <marker date="1465770004828" expanded="true" signature="1034:1068" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465770004828" expanded="true" signature="1034:1096" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465770004828" expanded="true" signature="1382:1723" placeholder=" INSERT statement (USERS)" />
-                <marker date="1465770004828" expanded="true" signature="2055:2289" placeholder=" SELECT statement (USERS)" />
-                <marker date="1465770004828" expanded="true" signature="2707:2812" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465770004828" expanded="true" signature="2707:2841" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465770004828" expanded="true" signature="2707:2842" placeholder=" INSERT statement (FRIEND)" />
-                <marker date="1465770004828" expanded="true" signature="2707:2844" placeholder=" INSERT statement (FRIENDS)" />
-                <marker date="1465770004828" expanded="true" signature="2707:2880" placeholder=" INSERT statement (FRIENDS)" />
-                <marker date="1465770004828" expanded="true" signature="2914:3085" placeholder=" INSERT statement (FRIENDS)" />
-                <marker date="1465770004828" expanded="true" signature="3375:3471" placeholder=" DELETE statement" />
-                <marker date="1465770004828" expanded="true" signature="3375:3500" placeholder=" DELETE statement" />
-                <marker date="1465770004828" expanded="true" signature="3375:3502" placeholder=" DELETE statement (FRIENDS)" />
-                <marker date="1465770004828" expanded="true" signature="3536:3570" placeholder=" DELETE statement" />
-                <marker date="1465770004828" expanded="true" signature="3536:3633" placeholder=" DELETE statement" />
-                <marker date="1465770004828" expanded="true" signature="3536:3663" placeholder=" INSERT statement (FRIENDS)" />
-                <marker date="1465770004828" expanded="true" signature="4002:4040" placeholder=" SELECT statement (FRIEND)" />
-                <marker date="1465770004828" expanded="true" signature="4002:4070" placeholder=" SELECT statement" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5426#5435#0" expanded="true" />
+                <marker date="1466001840304" expanded="true" signature="855:889" placeholder=" SELECT statement (USERS)" />
+                <marker date="1466001840304" expanded="true" signature="855:917" placeholder=" SELECT statement (USERS)" />
+                <marker date="1466001840304" expanded="true" signature="1203:1544" placeholder=" INSERT statement (USERS)" />
+                <marker date="1466001840304" expanded="true" signature="1876:2110" placeholder=" SELECT statement (USERS)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2707" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2742" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2744" placeholder=" INSERT statement (FRIEND)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2746" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2787" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2788" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2831" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2586:2833" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2872:3032" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2872:3117" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2872:3118" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="2872:3119" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3460" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3466" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3471" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3472" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3476" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3390:3526" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3397:3460" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3567:3653" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3567:3686" placeholder=" UPDATE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="3567:3703" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="4034:4130" placeholder=" DELETE statement" />
+                <marker date="1466001840304" expanded="true" signature="4034:4159" placeholder=" DELETE statement" />
+                <marker date="1466001840304" expanded="true" signature="4034:4161" placeholder=" DELETE statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="4196:4230" placeholder=" DELETE statement" />
+                <marker date="1466001840304" expanded="true" signature="4196:4293" placeholder=" DELETE statement" />
+                <marker date="1466001840304" expanded="true" signature="4196:4323" placeholder=" INSERT statement (FRIENDS)" />
+                <marker date="1466001840304" expanded="true" signature="4663:4701" placeholder=" SELECT statement (FRIEND)" />
+                <marker date="1466001840304" expanded="true" signature="4663:4731" placeholder=" SELECT statement" />
+                <marker date="1466001840304" expanded="true" signature="5282:5313" placeholder=" SELECT statement (USERSSPROOGL)" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManagerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Server/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,19 +170,11 @@
       <file leaf-file-name="IDBManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34953272">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IServerListeningThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/IServerListeningThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding />
+            <state vertical-scroll-proportion="0.36074767">
+              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,7 +183,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -236,13 +247,13 @@
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/IServerListeningThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/IServer.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/Server/Friends.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/User.java" />
-        <option value="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/ServerListeningThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/Server/Friends.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java" />
+        <option value="$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java" />
@@ -353,9 +364,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -696,58 +707,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CPStestTest.testGetLoginPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Server.Protocol.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ServerSproogl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Server.Protocol" />
-      <option name="MAIN_CLASS_NAME" value="Server.Protocol.CPStestTest" />
-      <option name="METHOD_NAME" value="testGetLoginPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DBManagerTest.searchFriendTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Server.DBManager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ServerSproogl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Server.DBManager" />
-      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
-      <option name="METHOD_NAME" value="searchFriendTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="DBManagerTest.getFrienListdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -761,6 +720,58 @@
       <option name="PACKAGE_NAME" value="Server.DBManager" />
       <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
       <option name="METHOD_NAME" value="getFrienListdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DBManagerTest.AdduserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Server.DBManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ServerSproogl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Server.DBManager" />
+      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
+      <option name="METHOD_NAME" value="AdduserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DBManagerTest.SearchFrienListdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Server.DBManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ServerSproogl" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Server.DBManager" />
+      <option name="MAIN_CLASS_NAME" value="Server.DBManager.DBManagerTest" />
+      <option name="METHOD_NAME" value="SearchFrienListdTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1106,17 +1117,17 @@
       <item index="0" class="java.lang.String" itemvalue="Mvn.DBManagerTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
       <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CPStestTest.testGetLoginPassword" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.searchFriendTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DBManagerTest.SearchFrienListdTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AddfriendTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.searchFriendTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CPStestTest.testGetLoginPassword" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DBManagerTest.SearchFrienListdTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DBManagerTest.AdduserTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DBManagerTest.getFrienListdTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1134,35 +1145,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.12 at 21h 11m 16s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 14h 26m 04s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.12 at 21h 14m 22s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 14h 28m 41s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.12 at 21h 27m 13s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 14h 29m 15s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.12 at 21h 28m 25s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 17h 44m 09s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.12 at 21h 41m 20s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 17h 44m 53s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.13 at 02h 56m 46s.xml">
+    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.15 at 17h 45m 17s.xml">
       <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.13 at 02h 57m 29s.xml">
-      <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_SearchFrienListdTest - 2016.06.15 at 12h 59m 01s.xml">
+      <configuration name="DBManagerTest.SearchFrienListdTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_AddfriendTest - 2016.06.13 at 14h 26m 19s.xml">
-      <configuration name="DBManagerTest.AddfriendTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_SearchFrienListdTest - 2016.06.15 at 13h 01m 22s.xml">
+      <configuration name="DBManagerTest.SearchFrienListdTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_getFrienListdTest - 2016.06.12 at 21h 41m 24s.xml">
-      <configuration name="DBManagerTest.getFrienListdTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_SearchFrienListdTest - 2016.06.15 at 13h 02m 15s.xml">
+      <configuration name="DBManagerTest.SearchFrienListdTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DBManagerTest_getFrienListdTest - 2016.06.12 at 21h 42m 13s.xml">
-      <configuration name="DBManagerTest.getFrienListdTest" configurationId="JUnit" />
+    <history-entry file="DBManagerTest_SearchFrienListdTest - 2016.06.15 at 13h 02m 49s.xml">
+      <configuration name="DBManagerTest.SearchFrienListdTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1176,7 +1187,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1284" height="1000" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1191,6 +1202,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23447712" sideWeight="0.4937833" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1202,7 +1214,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24271844" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1218,7 +1229,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="479" />
+      <option name="time" value="519" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1227,13 +1238,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/io/ObjectInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="15" selection-start-line="81" selection-start-column="15" selection-end-line="81" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/net/ServerSocket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1511,73 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Friends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="34" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
-          <folding>
-            <marker date="1465770004828" expanded="true" signature="1034:1068" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465770004828" expanded="true" signature="1034:1096" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465770004828" expanded="true" signature="1382:1723" placeholder=" INSERT statement (USERS)" />
-            <marker date="1465770004828" expanded="true" signature="2055:2289" placeholder=" SELECT statement (USERS)" />
-            <marker date="1465770004828" expanded="true" signature="2707:2812" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465770004828" expanded="true" signature="2707:2841" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465770004828" expanded="true" signature="2707:2842" placeholder=" INSERT statement (FRIEND)" />
-            <marker date="1465770004828" expanded="true" signature="2707:2844" placeholder=" INSERT statement (FRIENDS)" />
-            <marker date="1465770004828" expanded="true" signature="2707:2880" placeholder=" INSERT statement (FRIENDS)" />
-            <marker date="1465770004828" expanded="true" signature="2914:3085" placeholder=" INSERT statement (FRIENDS)" />
-            <marker date="1465770004828" expanded="true" signature="3375:3471" placeholder=" DELETE statement" />
-            <marker date="1465770004828" expanded="true" signature="3375:3500" placeholder=" DELETE statement" />
-            <marker date="1465770004828" expanded="true" signature="3375:3502" placeholder=" DELETE statement (FRIENDS)" />
-            <marker date="1465770004828" expanded="true" signature="3536:3570" placeholder=" DELETE statement" />
-            <marker date="1465770004828" expanded="true" signature="3536:3633" placeholder=" DELETE statement" />
-            <marker date="1465770004828" expanded="true" signature="3536:3663" placeholder=" INSERT statement (FRIENDS)" />
-            <marker date="1465770004828" expanded="true" signature="4002:4040" placeholder=" SELECT statement (FRIEND)" />
-            <marker date="1465770004828" expanded="true" signature="4002:4070" placeholder=" SELECT statement" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/IServerListeningThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1586,10 +1523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/net/SocketOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1602,29 +1539,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Protocol/CPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5426#5435#0" expanded="true" />
+            <marker date="1466001840304" expanded="true" signature="855:889" placeholder=" SELECT statement (USERS)" />
+            <marker date="1466001840304" expanded="true" signature="855:917" placeholder=" SELECT statement (USERS)" />
+            <marker date="1466001840304" expanded="true" signature="1203:1544" placeholder=" INSERT statement (USERS)" />
+            <marker date="1466001840304" expanded="true" signature="1876:2110" placeholder=" SELECT statement (USERS)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2707" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2742" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2744" placeholder=" INSERT statement (FRIEND)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2746" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2787" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2788" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2831" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2586:2833" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2872:3032" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2872:3117" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2872:3118" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="2872:3119" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3460" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3466" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3471" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3472" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3476" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3390:3526" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3397:3460" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3567:3653" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3567:3686" placeholder=" UPDATE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="3567:3703" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="4034:4130" placeholder=" DELETE statement" />
+            <marker date="1466001840304" expanded="true" signature="4034:4159" placeholder=" DELETE statement" />
+            <marker date="1466001840304" expanded="true" signature="4034:4161" placeholder=" DELETE statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="4196:4230" placeholder=" DELETE statement" />
+            <marker date="1466001840304" expanded="true" signature="4196:4293" placeholder=" DELETE statement" />
+            <marker date="1466001840304" expanded="true" signature="4196:4323" placeholder=" INSERT statement (FRIENDS)" />
+            <marker date="1466001840304" expanded="true" signature="4663:4701" placeholder=" SELECT statement (FRIEND)" />
+            <marker date="1466001840304" expanded="true" signature="4663:4731" placeholder=" SELECT statement" />
+            <marker date="1466001840304" expanded="true" signature="5282:5313" placeholder=" SELECT statement (USERSSPROOGL)" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/Server/DBManager/DBManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/INewConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Server/Server/NewConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Server/DBManager/IDBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34953272">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.36074767">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

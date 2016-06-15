@@ -1,18 +1,11 @@
 package Server.DBManager;
 import Server.Server.Friends;
-import Server.Server.Server;
 import Server.Server.User;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.math.BigDecimal;
-import java.net.URL;
 import java.sql.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Map;
 
 /**
  * Created by Denis on 09.06.2016.
@@ -84,38 +77,57 @@ public class DBManager implements IDBManager {
             return id;
     }
 
-    public void addFriend(User user, User friend) throws IOException {
+    public void addFriend(Friends user, Friends friend) throws IOException {
 
-        String reqest = "insert into friends(user_id,friend_id,friend_login) values("+
-                user.id+
-                ","+
-                friend.id+",'"+
-                friend.login+"');";
-        String reqestmirror = "insert into friends(user_id,friend_id,friend_login) values("+
-                friend.id+
-                ","+
-                user.id+",'"+
-                user.login+"');";
-        try {
-            statement.execute(reqest);
-            statement.execute(reqestmirror);
-        } catch (SQLException e) {
-            throw new IOException(e);
+        if(user.friendType != Friends.FRIEND) {
+            String reqest = "insert into friends(user_id,friend_id,friend_login,state) values(" +
+                    user.id +
+                    "," +
+                    friend.id + ",'" +
+                    friend.login + "',"
+                    + user.friendType + ");";
+            String requestmirror = "insert into friends(user_id,friend_id,friend_login,state) values(" +
+                    friend.id +
+                    "," +
+                    user.id + ",'" +
+                    user.login + "',"
+                    + friend.friendType + ");";
+            try {
+                statement.execute(reqest);
+                statement.execute(requestmirror);
+            } catch (SQLException e) {
+                throw new IOException(e);
+            }
+        }
+        else
+        {
+            String reqest = "update friends set state = "
+                    + user.friendType + " where user_id =" + user.id + " and friend_id = " + friend.id + ";";
+
+
+            String requestmirror = "update friends set state = "
+                    + user.friendType + " where user_id =" + friend.id + " and friend_id = " + user.id + ";";
+            try {
+                statement.execute(reqest);
+                statement.execute(requestmirror);
+            } catch (SQLException e) {
+                throw new IOException(e);
+            }
         }
     }
 
-    public void deleteFriend(User user, User friend) throws IOException {
+    public void deleteFriend(Friends user, Friends friend) throws IOException {
         String reqest = "delete from friends where user_id="+
                 user.id+
                 " and friend_id = "+
                 friend.id+";";
-        String reqestmirror = "delete from friends where user_id="+
+        String requestmirror = "delete from friends where user_id="+
                 friend.id+
                 " and friend_id = "+
                 user.id+";";
         try {
             statement.execute(reqest);
-            statement.execute(reqestmirror);
+            statement.execute(requestmirror);
         } catch (SQLException e) {
             throw new IOException(e);
         }
@@ -130,12 +142,36 @@ public class DBManager implements IDBManager {
             userlist = new ArrayList<Friends>();
             while (resultSet.next())
             {
-                userlist.add(new Friends(resultSet.getString(3),resultSet.getInt(2)));
+                userlist.add(new Friends(resultSet.getString(3),resultSet.getInt(2),resultSet.getInt(4)));
             }
             resultSet.close();
         } catch (SQLException e) {
             throw new IOException(e);
         }
+
+        return userlist;
+    }
+
+    public ArrayList<Friends> SearchFriend(String request) throws IOException {
+
+        request = "select * from users where login RLIKE '^"+request+"' LIMIT 10;";
+        ResultSet resultSet;
+        ArrayList<Friends> userlist= new ArrayList<Friends>();
+        try {
+
+            resultSet = statement.executeQuery(request);
+            while (resultSet.next())
+            {
+                userlist.add(new Friends(resultSet.getString("login"),resultSet.getInt("id"),Friends.UNACCEPTED));
+            }
+            resultSet.close();
+
+        }catch (SQLException e)
+        {
+            throw new IOException(e);
+        }
+
+
 
         return userlist;
     }

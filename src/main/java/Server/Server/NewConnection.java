@@ -94,6 +94,34 @@ public class NewConnection implements Runnable , INewConnection {
                 }
                 break;
             }
+            case (107) : {
+                message = new CPS(byteMessage);
+                addFriend(socket,message,Friends.REQUEST);
+                requestonFriend(message);
+
+                break;
+            }
+            case (108):{
+                message = new CPS(byteMessage);
+                searchfrend(message);
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+            case (110):{
+                message = new CPS(byteMessage);
+                addFriend(socket,message,Friends.FRIEND);
+                acceptFriend(message);
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
             default: break;
         }
 
@@ -193,7 +221,7 @@ public class NewConnection implements Runnable , INewConnection {
 
             return;
         }
-
+                message.type = 102;
                 OutputStream Lout = socketDest.getOutputStream();
                 Lout.write(message.toByte());
                 socketSrc.close();
@@ -203,8 +231,39 @@ public class NewConnection implements Runnable , INewConnection {
         }
     }
 
-    public void addFriend(Socket socketUser, CPS messageReqest) {
+    public void addFriend(Socket socketUser, CPS messageReqest,int type) {
+        int mirrortype =0 ;
 
+        switch (type)
+        {
+            case (0):
+            {
+                mirrortype = Friends.FRIEND;
+                break;
+             }
+            case (1):
+            {
+                mirrortype = Friends.REQUEST;
+                break;
+            }
+        }
+
+        User user1 = Server.userSession.get(messageReqest.ID_SRC);
+        User user2 = Server.userSession.get(messageReqest.ID_DEST);
+
+
+
+        Friends friend = new Friends(messageReqest.MSG,messageReqest.ID_DEST,type);
+        Friends user = new Friends(user1.login,user1.id,mirrortype);
+
+        try {
+            CPS srcmessage = null;
+            dbManager.addFriend(user, friend);
+
+        }catch (IOException e)
+        {
+
+        }
 
     }
 
@@ -225,7 +284,7 @@ public class NewConnection implements Runnable , INewConnection {
 
                 if(user != null)
                 {
-                    if(!incorrectDisconnected(user.getSocket(),new CPS(user.id))) {
+                    if(!incorrectDisconnected(user.getSocket(),new CPS(user.id))&& friend.friendType == Friends.FRIEND ) {
                         Socket friendSocket = user.getSocket();
 
                         messageUser.type = 105;
@@ -255,11 +314,14 @@ public class NewConnection implements Runnable , INewConnection {
                 }
 
                 size--;
+                Thread.sleep(50);
             }
 
         }catch (IOException e)
         {
             System.err.print(e);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -287,7 +349,7 @@ public class NewConnection implements Runnable , INewConnection {
         }
         else
         {
-
+            message.type=103;
             OutputStream out = socketUser.getOutputStream();
             out.write(testMessage.toByte());
             out.write(testMessage.toByte());
@@ -297,6 +359,125 @@ public class NewConnection implements Runnable , INewConnection {
         }catch(IOException e){
             Server.userSession.remove(id);
             return true;
+        }
+
+    }
+
+    public void searchfrend(CPS message) {
+
+        User user = Server.userSession.get(message.ID_SRC);
+
+        try {
+            ArrayList<Friends> users = dbManager.SearchFriend(message.MSG);
+
+            if(user == null)
+            {
+                return;
+            }
+
+            if(incorrectDisconnected(user.getSocket(),message)) {
+                return;
+            }
+
+            OutputStream out = user.getSocket().getOutputStream();
+            int size = users.size();
+
+            while (size!=0)
+            {
+                if(incorrectDisconnected(user.getSocket(),message)) {
+                    return;
+                }
+                Friends friend = users.get(size-1);
+                message.type = 108;
+                message.ID_SRC = friend.id;
+                message.MSG = friend.login+"\0";
+                out.write(message.toByte());
+                size--;
+            }
+
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            incorrectDisconnected(user.getSocket(),message);
+        }
+
+    }
+
+    public void requestonFriend(CPS message) {
+
+        User user1 = Server.userSession.get(message.ID_SRC);
+        User user2 = Server.userSession.get(message.ID_DEST);
+
+        try
+        {
+            OutputStream out1 = user1.getSocket().getOutputStream();
+        if(user2 != null)
+        {
+            if(!incorrectDisconnected(user2.getSocket(),message))
+            {
+                OutputStream out2 = user2.getSocket().getOutputStream();
+
+                message.type = 107;
+                message.MSG = user1.login+"\0";
+                out2.write(message.toByte());
+
+
+                }
+
+            }
+            OutputStream out = user1.getSocket().getOutputStream();
+            message.type = 106;
+            message.ID_SRC = message.ID_DEST;
+            message.MSG = user2.login+"\0";
+            out.write(message.toByte());
+
+        }
+     catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    }
+
+    public void acceptFriend(CPS message) {
+        User user1 = Server.userSession.get(message.ID_SRC);
+        User user2 = Server.userSession.get(message.ID_DEST);
+
+        try
+        {
+            OutputStream out1 = user1.getSocket().getOutputStream();
+            if(user2 != null)
+            {
+                if(!incorrectDisconnected(user2.getSocket(),message))
+                {
+                    OutputStream out2 = user2.getSocket().getOutputStream();
+
+                    message.type = 105;
+                    message.MSG = user1.login+"\0";
+                    message.ID_DEST = user1.id;
+                    message.ID_SRC = user2.id;
+                    out2.write(message.toByte());
+
+                    OutputStream out = user1.getSocket().getOutputStream();
+                    message.type = 105;
+                    message.ID_DEST = user2.id;
+                    message.ID_SRC = user1.id;
+                    message.MSG = user2.login+"\0";
+                    out.write(message.toByte());
+
+                        return;
+                }
+
+            }
+            OutputStream out = user1.getSocket().getOutputStream();
+            message.type = 106;
+            message.MSG = user2.login+"\0";
+            out.write(message.toByte());
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

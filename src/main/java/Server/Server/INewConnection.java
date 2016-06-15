@@ -37,7 +37,7 @@ public interface INewConnection {
     void sendMessage(User userDest,Socket socketSrc ,CPS messageDest);
 
 
-    void addFriend(Socket socketUser, CPS messageReqest);
+    void addFriend(Socket socketUser, CPS messageReqest, int type);
 
     void onlineFriendsList(Socket socketUser , CPS messageUser,ArrayList<Friends> friends);
 
@@ -50,6 +50,12 @@ public interface INewConnection {
     void disconnectionUser(Socket socketUser , CPS messageUser);
 
     boolean incorrectDisconnected(Socket socketUser,CPS testMessage);
+
+    void searchfrend(CPS message);
+
+    void requestonFriend(CPS message);
+
+    void acceptFriend(CPS message);
 
 
 }

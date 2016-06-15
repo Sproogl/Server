@@ -1,5 +1,6 @@
 package Server.DBManager;
 
+import Server.Server.Friends;
 import Server.Server.User;
 import org.junit.Test;
 
@@ -45,7 +46,8 @@ public class DBManagerTest {
 
         try {
             DBManager db = new DBManager();
-            db.addFriend(new User("admin",1,null,null),new User("den",2,null,null));
+            //db.addFriend(new Friends("Dima2",14,Friends.REQUEST),new Friends("admin",1,Friends.UNACCEPTED));
+            db.addFriend(new Friends("Dima2",14,Friends.FRIEND),new Friends("admin",1,Friends.FRIEND));
             //db.deleteFriend(new User("den",1,null,null),new User("tom",2,null,null));
             db.close();
         } catch (IOException e) {
@@ -58,7 +60,7 @@ public class DBManagerTest {
 
 
     @Test
-    public  void searchFriendTest(){
+    public  void searcUserTest(){
         int id=0;
         try {
             DBManager db = new DBManager();
@@ -78,6 +80,22 @@ public class DBManagerTest {
         try {
             DBManager db = new DBManager();
             //id = db.getFriendList(1);
+            db.close();
+        } catch (IOException e) {
+            System.err.print(e);
+            assert(false);
+        }
+        if(id.isEmpty())
+            assert(false);
+    }
+
+
+    @Test
+    public  void SearchFrienListdTest(){
+        ArrayList<Friends> id=null;
+        try {
+            DBManager db = new DBManager();
+            id = db.SearchFriend("den");
             db.close();
         } catch (IOException e) {
             System.err.print(e);

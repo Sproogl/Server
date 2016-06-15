@@ -13,7 +13,8 @@ public interface IDBManager {
 
     public static final String URL        =  "jdbc:mysql://127.0.0.1:3306/userssproogl";
     public static  final String LOGIN     =  "root";
-    public  static  final String PASSWORD =  "******";
+    public  static  final String PASSWORD =  "*****";
+
 
 
     /**
@@ -40,7 +41,7 @@ public interface IDBManager {
      * @param user
      * @param friend
      */
-    void addFriend(User user , User friend) throws IOException;
+    void addFriend(Friends user, Friends friend) throws IOException;
 
     /**
      *  returned arraylist friends this user
@@ -53,9 +54,18 @@ public interface IDBManager {
      * @param user
      * @param friend
      */
-    void deleteFriend(User user, User friend) throws IOException;
+    void deleteFriend(Friends user, Friends friend) throws IOException;
 
     ArrayList<Friends> getFriendList(int user_id) throws IOException;
+
+
+    /**
+     * Searching users by login, in userssproogl
+     * @param request
+     * @return
+     */
+    ArrayList<Friends> SearchFriend(String request) throws IOException;
+
 
     /**
      * closed connection
