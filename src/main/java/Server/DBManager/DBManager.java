@@ -1,5 +1,5 @@
 package Server.DBManager;
-import Server.Server.Friends;
+import Server.Server.Friend;
 import Server.Server.User;
 
 import java.io.IOException;
@@ -77,9 +77,9 @@ public class DBManager implements IDBManager {
             return id;
     }
 
-    public void addFriend(Friends user, Friends friend) throws IOException {
+    public void addFriend(Friend user, Friend friend) throws IOException {
 
-        if(user.friendType != Friends.FRIEND) {
+        if(user.friendType != Friend.FRIEND) {
             String reqest = "insert into friends(user_id,friend_id,friend_login,state) values(" +
                     user.id +
                     "," +
@@ -116,7 +116,7 @@ public class DBManager implements IDBManager {
         }
     }
 
-    public void deleteFriend(Friends user, Friends friend) throws IOException {
+    public void deleteFriend(Friend user, Friend friend) throws IOException {
         String reqest = "delete from friends where user_id="+
                 user.id+
                 " and friend_id = "+
@@ -133,16 +133,16 @@ public class DBManager implements IDBManager {
         }
     }
 
-    public ArrayList<Friends> getFriendList(int user_id) throws  IOException {
-        ArrayList<Friends> userlist = null;
+    public ArrayList<Friend> getFriendList(int user_id) throws  IOException {
+        ArrayList<Friend> userlist = null;
         String reqest = "select * from friends where user_id ='"
                 +user_id+"';";
         try {
             ResultSet resultSet = statement.executeQuery(reqest);
-            userlist = new ArrayList<Friends>();
+            userlist = new ArrayList<Friend>();
             while (resultSet.next())
             {
-                userlist.add(new Friends(resultSet.getString(3),resultSet.getInt(2),resultSet.getInt(4)));
+                userlist.add(new Friend(resultSet.getString(3),resultSet.getInt(2),resultSet.getInt(4)));
             }
             resultSet.close();
         } catch (SQLException e) {
@@ -152,17 +152,17 @@ public class DBManager implements IDBManager {
         return userlist;
     }
 
-    public ArrayList<Friends> SearchFriend(String request) throws IOException {
+    public ArrayList<Friend> SearchFriend(String request) throws IOException {
 
         request = "select * from users where login RLIKE '^"+request+"' LIMIT 10;";
         ResultSet resultSet;
-        ArrayList<Friends> userlist= new ArrayList<Friends>();
+        ArrayList<Friend> userlist= new ArrayList<Friend>();
         try {
 
             resultSet = statement.executeQuery(request);
             while (resultSet.next())
             {
-                userlist.add(new Friends(resultSet.getString("login"),resultSet.getInt("id"),Friends.UNACCEPTED));
+                userlist.add(new Friend(resultSet.getString("login"),resultSet.getInt("id"),Friend.UNACCEPTED));
             }
             resultSet.close();
 

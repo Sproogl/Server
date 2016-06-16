@@ -100,7 +100,7 @@ public class NewConnection implements Runnable , INewConnection {
             }
             case (107) : {
                 message = new CPS(byteMessage);
-                addFriend(socket,message,Friends.REQUEST);
+                addFriend(socket,message,Friend.REQUEST);
                 requestonFriend(message);
 
                 break;
@@ -117,7 +117,7 @@ public class NewConnection implements Runnable , INewConnection {
             }
             case (110):{
                 message = new CPS(byteMessage);
-                addFriend(socket,message,Friends.FRIEND);
+                addFriend(socket,message,Friend.FRIEND);
                 acceptFriend(message);
                 try {
                     socket.close();
@@ -201,11 +201,11 @@ public class NewConnection implements Runnable , INewConnection {
 
         User userDest = null;
         User userSrc = Server.userSession.get(messageDest.ID_SRC);
-        ArrayList<Friends> friends = userSrc.getFriend();
+        ArrayList<Friend> friends = userSrc.getFriend();
         int size = friends.size();
         while (size!=0)
         {
-            if(friends.get(size-1).id==messageDest.ID_DEST && friends.get(size-1).friendType==Friends.FRIEND)
+            if(friends.get(size-1).id==messageDest.ID_DEST && friends.get(size-1).friendType==Friend.FRIEND)
             {
                 userDest = Server.userSession.get(messageDest.ID_DEST);
 
@@ -245,12 +245,12 @@ public class NewConnection implements Runnable , INewConnection {
         {
             case (0):
             {
-                mirrortype = Friends.FRIEND;
+                mirrortype = Friend.FRIEND;
                 break;
              }
             case (1):
             {
-                mirrortype = Friends.UNACCEPTED;
+                mirrortype = Friend.UNACCEPTED;
                 break;
             }
         }
@@ -260,8 +260,8 @@ public class NewConnection implements Runnable , INewConnection {
 
 
 
-        Friends friend = new Friends(messageReqest.MSG,messageReqest.ID_DEST,type);
-        Friends user = new Friends(user1.login,user1.id,mirrortype);
+        Friend friend = new Friend(messageReqest.MSG,messageReqest.ID_DEST,type);
+        Friend user = new Friend(user1.login,user1.id,mirrortype);
 
         try {
             CPS srcmessage = null;
@@ -274,11 +274,11 @@ public class NewConnection implements Runnable , INewConnection {
 
     }
 
-    public void onlineFriendsList(Socket socketUser, CPS messageUser,ArrayList<Friends> friends) {
+    public void onlineFriendsList(Socket socketUser, CPS messageUser,ArrayList<Friend> friends) {
 
         try {
             OutputStream out = socketUser.getOutputStream();
-            Friends friend;
+            Friend friend;
             friends = dbManager.getFriendList(messageUser.ID_SRC);
             int size = friends.size();
 
@@ -389,7 +389,7 @@ public class NewConnection implements Runnable , INewConnection {
         User user = Server.userSession.get(message.ID_SRC);
 
         try {
-            ArrayList<Friends> users = dbManager.SearchFriend(message.MSG);
+            ArrayList<Friend> users = dbManager.SearchFriend(message.MSG);
 
             if(user == null)
             {
@@ -400,7 +400,7 @@ public class NewConnection implements Runnable , INewConnection {
                 return;
             }
 
-            ArrayList<Friends> friendsSRC = user.getFriend();
+            ArrayList<Friend> friendsSRC = user.getFriend();
             int size = friendsSRC.size();
             int size2 = users.size();
             OutputStream out = user.getSocket().getOutputStream();
@@ -489,11 +489,11 @@ public class NewConnection implements Runnable , INewConnection {
             OutputStream out1 = user1.getSocket().getOutputStream();
             if(user2 != null)
             {
-                Friends friend = new Friends(user2.login,user2.id,Friends.FRIEND);
+                Friend friend = new Friend(user2.login,user2.id,Friend.FRIEND);
                 user1.addFriendtoList(friend);
                 if(!incorrectDisconnected(user2.getSocket(),message))
                 {
-                    friend = new Friends(user1.login,user1.id,Friends.FRIEND);
+                    friend = new Friend(user1.login,user1.id,Friend.FRIEND);
                     user2.addFriendtoList(friend);
                     OutputStream out2 = user2.getSocket().getOutputStream();
 
@@ -531,7 +531,7 @@ public class NewConnection implements Runnable , INewConnection {
     public void disconnectFriendList(Socket socketUser, CPS messageUser){
         User user = Server.userSession.get(messageUser.ID_SRC);
         messageUser.type = 106;
-        ArrayList<Friends> friendList = null;
+        ArrayList<Friend> friendList = null;
         OutputStream outL = null;
         if(user!=null)
         {

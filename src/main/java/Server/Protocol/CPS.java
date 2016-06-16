@@ -36,36 +36,31 @@ public class CPS implements ICPS {
     }
 
     public byte[] toByte(){
+        byte [] arraytype = new byte[1];
+        arraytype[0]=type;
 
-        byte []arrayID_SRC = intToByte(ID_SRC);
-        byte []arrayID_DEST = intToByte(ID_DEST);
-        byte []arrayMSG_LEN = intToByte(MSG_LEN);
-        byte [] arrayID = contact(arrayID_SRC,arrayID_DEST);
-        byte [] arrayIDandMSG_LEN = contact(arrayID,arrayMSG_LEN);
-        byte [] arrayTYPE = new byte[1];
-        byte []arrayMSG = MSG.getBytes();
-        arrayMSG = contact(new byte[3],arrayMSG);
-        arrayTYPE[0]=type;
-        byte []arrayINFO = contact(arrayTYPE,arrayIDandMSG_LEN);
+        byte []arrMsg = contact(arraytype,intToByte(ID_SRC));
+        arrMsg= contact(arrMsg,intToByte(ID_DEST));
+        arrMsg = contact(arrMsg,intToByte(MSG_LEN));
+        arrMsg = contact(arrMsg,new byte[3]);
+        arrMsg = contact(arrMsg,MSG.getBytes());
 
-        int test = arrayMSG.length;
-        if(arrayMSG[test-1]!= 0 )
+
+        int size = arrMsg.length;
+        if(arrMsg[size-1]!= 0 )
         {
-            if(arrayMSG[test-1]==10)
+            if(arrMsg[size-1]==10)
             {
-                arrayMSG[test-1]=0;
+                arrMsg[size-1]=0;
             }
             else
             {
-                arrayMSG = contact(arrayMSG,new byte[1]);
+                arrMsg = contact(arrMsg,new byte[1]);
             }
 
         }
 
-
-
-        byte [] returnArray = contact(arrayINFO,arrayMSG);
-        return returnArray;
+        return arrMsg;
     }
 
     public void toCPS(byte[] array)

@@ -27,12 +27,12 @@ public class CPStestTest {
         actualMSG[1] = "login/password\\";
         actualMSG[2] = "papa jons";
         actualMSG[3] = "vsia popol";
-        actualMSG[4] = "fdfdfdgd;lfgdfgdfgdfg gfghfghfghfghfg";
+        actualMSG[4] = "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg";
         actualMSG[5] = "";
-        actualMSG[6] = "rer";
+        actualMSG[6] = "1232!@#$%^&*()_+?>|~~";
         actualMSG[7] = "pfgpgpfgppgfhfgphpfg";
-        actualMSG[8] = "]fg]fg[h[fgh]f";
-        actualMSG[9] = "1213/2.312/3/23";
+        actualMSG[8] = "12345678900987654321";
+        actualMSG[9] = "                                    ";
 
     }
 

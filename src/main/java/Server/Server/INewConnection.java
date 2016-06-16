@@ -35,10 +35,21 @@ public interface INewConnection {
      */
     void sendMessage(CPS messageDest);
 
-
+    /**
+     * add friend in date base
+     * @param socketUser
+     * @param messageReqest
+     * @param type
+     */
     void addFriend(Socket socketUser, CPS messageReqest, int type);
 
-    void onlineFriendsList(Socket socketUser , CPS messageUser,ArrayList<Friends> friends);
+    /**
+     * It sends a message to a friend that the user went to the network
+     * @param socketUser
+     * @param messageUser
+     * @param friends
+     */
+    void onlineFriendsList(Socket socketUser , CPS messageUser,ArrayList<Friend> friends);
 
 
     /**
@@ -48,12 +59,33 @@ public interface INewConnection {
      */
     void disconnectionUser(Socket socketUser , CPS messageUser);
 
+    /**
+     * check the socket operation and remove users if socket doesn't work
+     * @param socketUser
+     * @param testMessage
+     * @return
+     */
     boolean incorrectDisconnected(Socket socketUser,CPS testMessage);
 
+
+    /**
+     * search users in data base
+     * @param message
+     */
     void searchfrend(CPS message);
 
+
+    /**
+     * sends message.ID_DEST a request to add a Friend
+     * @param message
+     */
     void requestonFriend(CPS message);
 
+
+    /**
+     * processing confirmation message for adding friends and add userSession
+     * @param message
+     */
     void acceptFriend(CPS message);
 
 

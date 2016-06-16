@@ -1,6 +1,6 @@
 package Server.DBManager;
 
-import Server.Server.Friends;
+import Server.Server.Friend;
 import Server.Server.User;
 import org.junit.Test;
 
@@ -47,7 +47,7 @@ public class DBManagerTest {
         try {
             DBManager db = new DBManager();
             //db.addFriend(new Friends("Dima2",14,Friends.REQUEST),new Friends("admin",1,Friends.UNACCEPTED));
-            db.addFriend(new Friends("Dima2",14,Friends.FRIEND),new Friends("admin",1,Friends.FRIEND));
+            db.addFriend(new Friend("Dima2",14,Friend.FRIEND),new Friend("admin",1,Friend.FRIEND));
             //db.deleteFriend(new User("den",1,null,null),new User("tom",2,null,null));
             db.close();
         } catch (IOException e) {
@@ -92,7 +92,7 @@ public class DBManagerTest {
 
     @Test
     public  void SearchFrienListdTest(){
-        ArrayList<Friends> id=null;
+        ArrayList<Friend> id=null;
         try {
             DBManager db = new DBManager();
             id = db.SearchFriend("den");

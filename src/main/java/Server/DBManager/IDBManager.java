@@ -1,6 +1,6 @@
 package Server.DBManager;
 
-import Server.Server.Friends;
+import Server.Server.Friend;
 import Server.Server.User;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ public interface IDBManager {
 
     public static final String URL        =  "jdbc:mysql://127.0.0.1:3306/userssproogl";
     public static  final String LOGIN     =  "root";
-    public  static  final String PASSWORD =  "****";
+    public  static  final String PASSWORD =  "****S";
 
 
 
@@ -41,22 +41,24 @@ public interface IDBManager {
      * @param user
      * @param friend
      */
-    void addFriend(Friends user, Friends friend) throws IOException;
+    void addFriend(Friend user, Friend friend) throws IOException;
+
+
+
+    /**
+     * deleted user from table "friends"
+     * @param user
+     * @param friend
+     */
+    void deleteFriend(Friend user, Friend friend) throws IOException;
+
 
     /**
      *  returned arraylist friends this user
      * @param user_id
      * @return arraylist friend
      */
-
-    /**
-     *
-     * @param user
-     * @param friend
-     */
-    void deleteFriend(Friends user, Friends friend) throws IOException;
-
-    ArrayList<Friends> getFriendList(int user_id) throws IOException;
+    ArrayList<Friend> getFriendList(int user_id) throws IOException;
 
 
     /**
@@ -64,7 +66,7 @@ public interface IDBManager {
      * @param request
      * @return
      */
-    ArrayList<Friends> SearchFriend(String request) throws IOException;
+    ArrayList<Friend> SearchFriend(String request) throws IOException;
 
 
     /**

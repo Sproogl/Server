@@ -10,8 +10,8 @@ public class User {
    public String login;
     public Integer id;
     private Socket socket;
-    private ArrayList<Friends> friendsArray;
-    public  User(String Login, Integer Id, Socket socket, ArrayList<Friends> friendsArray){
+    private ArrayList<Friend> friendsArray;
+    public  User(String Login, Integer Id, Socket socket, ArrayList<Friend> friendsArray){
         this.socket = socket;
         login = Login;
         id = Id;
@@ -25,11 +25,11 @@ public class User {
         return socket;
     }
 
-    public ArrayList<Friends> getFriend(){
+    public ArrayList<Friend> getFriend(){
         return friendsArray;
     }
 
-    public void addFriendtoList(Friends friend){
+    public void addFriendtoList(Friend friend){
         friendsArray.add(friend);
     }
 }

@@ -6,7 +6,7 @@ package Server.Server;
 
 
 
-public class Friends {
+public class Friend {
 
     public static int REQUEST =1;
     public static int UNACCEPTED =2;
@@ -15,7 +15,7 @@ public class Friends {
    public int friendType;
    public Integer id;
     public String login;
-   public Friends (String Login, Integer Id, int friendType){
+   public Friend (String Login, Integer Id, int friendType){
         login = Login;
         id = Id;
        this.friendType = friendType;
