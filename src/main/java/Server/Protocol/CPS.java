@@ -48,7 +48,24 @@ public class CPS implements ICPS {
         arrayTYPE[0]=type;
         byte []arrayINFO = contact(arrayTYPE,arrayIDandMSG_LEN);
 
-        return contact(arrayINFO,arrayMSG);
+        int test = arrayMSG.length;
+        if(arrayMSG[test-1]!= 0 )
+        {
+            if(arrayMSG[test-1]==10)
+            {
+                arrayMSG[test-1]=0;
+            }
+            else
+            {
+                arrayMSG = contact(arrayMSG,new byte[1]);
+            }
+
+        }
+
+
+
+        byte [] returnArray = contact(arrayINFO,arrayMSG);
+        return returnArray;
     }
 
     public void toCPS(byte[] array)

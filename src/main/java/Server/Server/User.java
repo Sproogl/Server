@@ -28,4 +28,8 @@ public class User {
     public ArrayList<Friends> getFriend(){
         return friendsArray;
     }
+
+    public void addFriendtoList(Friends friend){
+        friendsArray.add(friend);
+    }
 }

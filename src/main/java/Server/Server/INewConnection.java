@@ -31,10 +31,9 @@ public interface INewConnection {
 
     /**
      * Send messageDest to socketDest
-     * @param userDest # this socket of Server.userSession! #
      * @param messageDest
      */
-    void sendMessage(User userDest,Socket socketSrc ,CPS messageDest);
+    void sendMessage(CPS messageDest);
 
 
     void addFriend(Socket socketUser, CPS messageReqest, int type);
