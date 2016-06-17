@@ -2,7 +2,6 @@ package Server.Server;
 
 import Server.DBManager.DBManager;
 import Server.Protocol.CPS;
-import com.sun.org.apache.bcel.internal.generic.SWAP;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -328,7 +327,7 @@ public class NewConnection implements Runnable , INewConnection {
                     }
 
                     case  (2):{
-                        messageUser.type = 109;
+                        messageUser.type = 106;
                         messageUser.ID_SRC=friend.id;
                         messageUser.MSG = friend.login;
                         out.write(messageUser.toByte());
@@ -408,7 +407,7 @@ public class NewConnection implements Runnable , INewConnection {
             {
                 for (int j = 0; j < size2; j++)
                 {
-                    if(friendsSRC.get(i).id == users.get(j).id)
+                    if(friendsSRC.get(i).id == users.get(j).id || users.get(j).id == user.id)
                     {
 
                         users.remove(j);
@@ -487,10 +486,11 @@ public class NewConnection implements Runnable , INewConnection {
         try
         {
             OutputStream out1 = user1.getSocket().getOutputStream();
+            Friend friend = new Friend(message.MSG,message.ID_DEST,Friend.FRIEND);
+            user1.addFriendtoList(friend);
             if(user2 != null)
             {
-                Friend friend = new Friend(user2.login,user2.id,Friend.FRIEND);
-                user1.addFriendtoList(friend);
+
                 if(!incorrectDisconnected(user2.getSocket(),message))
                 {
                     friend = new Friend(user1.login,user1.id,Friend.FRIEND);
@@ -517,7 +517,6 @@ public class NewConnection implements Runnable , INewConnection {
             OutputStream out = user1.getSocket().getOutputStream();
             message.type = 106;
             message.ID_SRC = message.ID_DEST;
-            message.MSG = user2.login;
             out.write(message.toByte());
 
         }

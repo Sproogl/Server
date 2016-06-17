@@ -1,10 +1,12 @@
 package Server.DBManager;
+
 import Server.Server.Friend;
-import Server.Server.User;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
-
 import java.util.ArrayList;
 
 /**
@@ -33,6 +35,7 @@ public class DBManager implements IDBManager {
 
     public int addUser(String login, String password, String email) throws IOException {
         int id =0;
+        String md5Password = hashingMd5(password);
         String reqest = "select * from users where login ='"
                 +login+"';";
         try {
@@ -48,7 +51,7 @@ public class DBManager implements IDBManager {
         reqest = "insert into users(login,password,mail) values('"+
                                                                 login+
                                                                   "','"+
-                                                         password+"','"+
+                                                        md5Password+"','"+
                                                                 email+"');";
         try {
             statement.execute(reqest);
@@ -61,10 +64,12 @@ public class DBManager implements IDBManager {
 
     public int searchUser(String login, String password) throws IOException {
         int id=0;
+
+        String md5Password = hashingMd5(password);
         String reqest = "select * from users where login ='"
                                                     +login
                                                     +"' and password = '"
-                                                    +password+"';";
+                                                    +md5Password+"';";
         try {
             ResultSet resultSet = statement.executeQuery(reqest);
             if(resultSet.next()) {
@@ -183,5 +188,30 @@ public class DBManager implements IDBManager {
         } catch (SQLException e) {
             throw new IOException(e);
         }
+    }
+
+    public String hashingMd5(String password) {
+        String salt =  "p!th5du#gj2+g6";
+        password = salt + password;
+        MessageDigest messageDigest = null;
+        byte[] digest = new byte[0];
+
+        try {
+            messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.reset();
+            messageDigest.update(password.getBytes());
+            digest = messageDigest.digest();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        BigInteger bigInt = new BigInteger(1, digest);
+        String md5Hex = bigInt.toString(16);
+
+        while( md5Hex.length() < 32 ){
+            md5Hex = "0" + md5Hex;
+        }
+
+        return md5Hex;
     }
 }

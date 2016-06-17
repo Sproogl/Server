@@ -7,8 +7,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Denis on 09.06.2016.
  */
@@ -32,7 +30,7 @@ public class DBManagerTest {
     public  void AdduserTest(){
         try {
             DBManager db = new DBManager();
-           db.addUser("denis3222","12345","den@mail.ru");
+           db.addUser("googldask","xelsing69","den@mail.ru");
             db.close();
         } catch (IOException e) {
             System.err.print(e);
@@ -64,7 +62,7 @@ public class DBManagerTest {
         int id=0;
         try {
             DBManager db = new DBManager();
-            id = db.searchUser("denis123","12345");
+            id = db.searchUser("googldask","xelsing69");
             db.close();
         } catch (IOException e) {
             System.err.print(e);

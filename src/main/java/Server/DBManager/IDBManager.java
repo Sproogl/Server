@@ -1,7 +1,6 @@
 package Server.DBManager;
 
 import Server.Server.Friend;
-import Server.Server.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public interface IDBManager {
 
     public static final String URL        =  "jdbc:mysql://127.0.0.1:3306/userssproogl";
     public static  final String LOGIN     =  "root";
-    public  static  final String PASSWORD =  "****S";
+    public  static  final String PASSWORD =  "********";
 
 
 
@@ -74,6 +73,13 @@ public interface IDBManager {
      */
     void close() throws IOException;
 
+
+    /**
+     * hashing password
+     * @param password
+     * @return
+     */
+     String hashingMd5(String password);
 
 
 }
