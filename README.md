@@ -1,5 +1,6 @@
 
-#### 16.06.2016
+#### 17.06.2016
+##### v 0.1.3
 | Job       | link           | State  |
 | ------------- |:-------------:| -----:|
 | DBManager      | [![](http://www.fancyicons.com/free-icons/232/programming/png/24/external_link_24.png)](https://github.com/watfmessagener/Server/tree/master/src/main/java/Server/DBManager) | [![](http://archeagewiki.ru/images/a/a1/Галочка_зелёная.png)](https://github.com/watfmessagener/Server) |
