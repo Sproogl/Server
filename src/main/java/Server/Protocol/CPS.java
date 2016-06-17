@@ -1,6 +1,8 @@
 package Server.Protocol;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+
 
 /**
  * Protocol sproogl
@@ -43,7 +45,13 @@ public class CPS implements ICPS {
         arrMsg= contact(arrMsg,intToByte(ID_DEST));
         arrMsg = contact(arrMsg,intToByte(MSG_LEN));
         arrMsg = contact(arrMsg,new byte[3]);
-        arrMsg = contact(arrMsg,MSG.getBytes());
+
+
+        try {
+            arrMsg = contact(arrMsg,MSG.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
 
         int size = arrMsg.length;

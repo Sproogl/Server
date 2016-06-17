@@ -37,6 +37,7 @@ public class NewConnection implements Runnable , INewConnection {
 
         try {
             in = socket.getInputStream();
+
             in.read(byteMessage);
 
 
