@@ -1,7 +1,16 @@
 package Server.DBManager;
 
 import Server.Server.Friend;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -20,7 +29,33 @@ public class DBManager implements IDBManager {
     public DBManager() throws IOException {
 
         try {
-            connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
+
+            String ip="localhost";
+
+
+            DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
+            f.setValidating(false);
+            DocumentBuilder builder = null;
+            try {
+                builder = f.newDocumentBuilder();
+            Document doc = builder.parse(new File("config.xml"));
+                NodeList nodeList=doc.getElementsByTagName("connection");
+                for(int i = 0 ; i< nodeList.getLength();i++)
+                {
+                    Node node = nodeList.item(i);
+                    Element element = (Element)node;
+                    ip = element.getAttribute("ip");
+                }
+
+
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            }
+
+            String url = "jdbc:mysql://"+ip+":3306/userssproogl";
+            connection = DriverManager.getConnection(url,LOGIN,PASSWORD);
             statement = connection.createStatement();
             if(connection.isClosed())
             {
@@ -66,7 +101,7 @@ public class DBManager implements IDBManager {
         int id=0;
 
         String md5Password = hashingMd5(password);
-        String reqest = "select * from users where login ='"
+        String reqest = "select * from users where BINARY login ='"
                                                     +login
                                                     +"' and password = '"
                                                     +md5Password+"';";

@@ -30,7 +30,7 @@ public class DBManagerTest {
     public  void AdduserTest(){
         try {
             DBManager db = new DBManager();
-           db.addUser("googldask","xelsing69","den@mail.ru");
+           db.addUser("den69","1","den@mail.ru");
             db.close();
         } catch (IOException e) {
             System.err.print(e);
