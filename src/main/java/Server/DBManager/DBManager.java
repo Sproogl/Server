@@ -54,7 +54,7 @@ public class DBManager implements IDBManager {
                 e.printStackTrace();
             }
 
-            String url = "jdbc:mysql://"+ip+":3306/userssproogl";
+            String url = "jdbc:mysql://"+ip+":3306/zzjwmctz_userssproogl";
             connection = DriverManager.getConnection(url,LOGIN,PASSWORD);
             statement = connection.createStatement();
             if(connection.isClosed())

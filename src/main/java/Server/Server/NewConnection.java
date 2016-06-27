@@ -279,6 +279,10 @@ public class NewConnection implements Runnable , INewConnection {
         try {
             OutputStream out = socketUser.getOutputStream();
             Friend friend;
+            int IDuser=0;
+            IDuser = messageUser.ID_SRC;
+            String loginUser=null;
+            loginUser = messageUser.MSG;
             friends = dbManager.getFriendList(messageUser.ID_SRC);
             int size = friends.size();
 
@@ -301,6 +305,8 @@ public class NewConnection implements Runnable , INewConnection {
                             OutputStream outFriend = friendSocket.getOutputStream();
 
                             messageUser.type = 105;
+                            messageUser.ID_SRC = IDuser;
+                            messageUser.MSG = loginUser;
                             outFriend.write(messageUser.toByte());
 
                             messageUser.ID_SRC = friend.id;

@@ -62,7 +62,7 @@ public class DBManagerTest {
         int id=0;
         try {
             DBManager db = new DBManager();
-            id = db.searchUser("googldask","xelsing69");
+            id = db.searchUser("stereo069","xelsing69");
             db.close();
         } catch (IOException e) {
             System.err.print(e);
