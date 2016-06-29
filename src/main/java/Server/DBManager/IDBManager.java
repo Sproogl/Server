@@ -12,7 +12,7 @@ public interface IDBManager {
 
 
     public static  final String LOGIN     =  "zzjwmctz_root";
-    public  static  final String PASSWORD =  "xelsing69";
+    public  static  final String PASSWORD =  "******";
 
 
 
