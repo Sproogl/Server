@@ -2,7 +2,6 @@ package Server.Server;
 
 import Server.Protocol.CPS;
 
-import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -12,6 +11,7 @@ import java.util.ArrayList;
 public interface INewConnection {
 
     /**
+     * NEED DB
      * Registration user in network.
      * The server receives a message from a client,
      * and if the username and password are valid on the same socket sent its id.
@@ -22,6 +22,7 @@ public interface INewConnection {
 
 
     /**
+     * NEED DB
      * Added SocketUser and messageUser.ID_SRC in Server.userSession
      * @param socketUser
      * @param messageUser
@@ -36,6 +37,7 @@ public interface INewConnection {
     void sendMessage(CPS messageDest);
 
     /**
+     * NEED DB
      * add friend in date base
      * @param socketUser
      * @param messageReqest
@@ -44,6 +46,7 @@ public interface INewConnection {
     void addFriend(Socket socketUser, CPS messageReqest, int type);
 
     /**
+     * NEED DB
      * It sends a message to a friend that the user went to the network
      * @param socketUser
      * @param messageUser
@@ -69,6 +72,7 @@ public interface INewConnection {
 
 
     /**
+     * NEED DB
      * search users in data base
      * @param message
      */
@@ -76,6 +80,7 @@ public interface INewConnection {
 
 
     /**
+     * NEED DB
      * sends message.ID_DEST a request to add a Friend
      * @param message
      */

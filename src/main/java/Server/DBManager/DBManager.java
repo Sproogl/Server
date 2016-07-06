@@ -221,7 +221,7 @@ public class DBManager implements IDBManager {
             connection.close();
             statement.close();
         } catch (SQLException e) {
-            throw new IOException(e);
+
         }
     }
 

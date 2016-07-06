@@ -7,11 +7,13 @@ import java.util.ArrayList;
  * Created by Denis on 12.06.2016.
  */
 public class User {
-   public String login;
+    public boolean statusConnections;
+    public String login;
     public Integer id;
     private Socket socket;
     private ArrayList<Friend> friendsArray;
-    public  User(String Login, Integer Id, Socket socket, ArrayList<Friend> friendsArray){
+    public  User(String Login, Integer Id, Socket socket, ArrayList<Friend> friendsArray ,boolean statusConnections){
+        this.statusConnections = statusConnections;
         this.socket = socket;
         login = Login;
         id = Id;

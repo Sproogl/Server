@@ -14,16 +14,14 @@ import java.util.logging.Logger;
  * Created by Denis on 11.06.2016.
  */
 public class NewConnection implements Runnable , INewConnection {
-
-    CPS message;
     Socket socket;
     DBManager dbManager;
-    private static Logger log = Logger.getLogger(NewConnection.class.getName());
+    private Logger log = Logger.getLogger(NewConnection.class.getName());
 
 
    public NewConnection(Socket socket) throws IOException {
 
-       dbManager = new DBManager();
+
        this.socket = socket;
 
 
@@ -31,15 +29,17 @@ public class NewConnection implements Runnable , INewConnection {
    }
 
     public void run() {
+
+        CPS message = null;
         InputStream in = null;
         OutputStream out = null;
+        long startTime = System.currentTimeMillis();
         byte [] byteMessage = new byte[520];
 
         try {
             in = socket.getInputStream();
-
             in.read(byteMessage);
-
+            Server.epoch = System.currentTimeMillis();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,21 +49,30 @@ public class NewConnection implements Runnable , INewConnection {
         switch (byteMessage[0])
         {
 
-            case (100): {
+            case (TypeMessage.REGISTRATION): {
+                try {
+                    dbManager = new DBManager();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 message = new CPS(byteMessage);
                 registrationUser(socket,message );
                     break;
             }
 
-            case (101): {
-
+            case (TypeMessage.CONNECT): {
+                try {
+                    dbManager = new DBManager();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 message = new CPS(byteMessage);
                 connectionUser(socket,message );
 
                 break;
             }
 
-            case (102) : {
+            case (TypeMessage.MESSAGE) : {
                 message = new CPS(byteMessage);
                 sendMessage(message);
                 try {
@@ -74,14 +83,13 @@ public class NewConnection implements Runnable , INewConnection {
                 break;
             }
 
-            case (103) : {
+            case (TypeMessage.DISCONNECT) : {
                 message = new CPS(byteMessage);
                 disconnectionUser(socket , message);
                 break;
             }
 
-            case (104) : {
-                message = new CPS(byteMessage);
+            case (TypeMessage.ERROR) : {
                 try {
                     socket.close();
                 } catch (IOException e) {
@@ -89,23 +97,24 @@ public class NewConnection implements Runnable , INewConnection {
                 }
                 break;
             }
-
-            case (105) : {
+            case (TypeMessage.REQUESTONFRIEND) : {
                 try {
-                    socket.close();
+                    dbManager = new DBManager();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                break;
-            }
-            case (107) : {
                 message = new CPS(byteMessage);
                 addFriend(socket,message,Friend.REQUEST);
                 requestonFriend(message);
 
                 break;
             }
-            case (108):{
+            case (TypeMessage.SEARCHUSER):{
+                try {
+                    dbManager = new DBManager();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 message = new CPS(byteMessage);
                 searchfrend(message);
                 try {
@@ -115,7 +124,12 @@ public class NewConnection implements Runnable , INewConnection {
                 }
                 break;
             }
-            case (110):{
+            case (TypeMessage.ACCEPTONFRIEND):{
+                try {
+                    dbManager = new DBManager();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 message = new CPS(byteMessage);
                 addFriend(socket,message,Friend.FRIEND);
                 acceptFriend(message);
@@ -126,7 +140,14 @@ public class NewConnection implements Runnable , INewConnection {
                 }
                 break;
             }
-            default: break;
+            default: {
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
         }
 
         try {
@@ -134,6 +155,8 @@ public class NewConnection implements Runnable , INewConnection {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        long timeSpent = System.currentTimeMillis() - startTime;
+       // log.fine("TYPE : "+ byteMessage[0] + " : " + timeSpent + " millisecond");
         return;
 
     }
@@ -146,7 +169,13 @@ public class NewConnection implements Runnable , INewConnection {
                 OutputStream out = socketUser.getOutputStream();
                 id = dbManager.searchUser(messageUser.getLogin(), messageUser.getPassword());
                 User user = Server.userSession.get(id);
-            if (user == null) {
+            if (user == null && id!=0 && messageUser.getLogin() != null) {
+                user = new User(messageUser.getLogin(),id,
+                        null,
+                        dbManager.getFriendList(id),true);
+
+                Server.userSession.put(id, user);
+
                 messageUser.ID_SRC = id;
                 out = socket.getOutputStream();
                 out.write(messageUser.toByte());
@@ -155,13 +184,15 @@ public class NewConnection implements Runnable , INewConnection {
             }
             else
             {
-                if(incorrectDisconnected(user.getSocket(),new CPS(id))){
-                    messageUser.ID_SRC = id;
-                    out = socket.getOutputStream();
-                    out.write(messageUser.toByte());
+                if(user !=null) {
+                    if (incorrectDisconnected(user.getSocket(), new CPS(id))) {
+                        messageUser.ID_SRC = id;
+                        out = socket.getOutputStream();
+                        out.write(messageUser.toByte());
+                    }
+                    out.close();
+                    socketUser.close();
                 }
-                out.close();
-                socketUser.close();
             }
             }catch(IOException e){
                 Server.userSession.remove(id);
@@ -173,18 +204,20 @@ public class NewConnection implements Runnable , INewConnection {
     public void connectionUser(Socket socketUser, CPS messageUser) {
 
         try {
-        if(Server.userSession.get(message.ID_SRC)==null) {
-           User user = new User(message.MSG,message.ID_SRC,
-                                socketUser,
-                                dbManager.getFriendList(messageUser.ID_SRC));
+            User user = Server.userSession.get(messageUser.ID_SRC);
+        if(user != null) {
+            if(user.statusConnections == true) {
+                user = new User(messageUser.MSG, messageUser.ID_SRC,
+                        socketUser,
+                        dbManager.getFriendList(messageUser.ID_SRC),false);
 
-            Server.userSession.put(message.ID_SRC, user);
-            onlineFriendsList(socketUser,messageUser,user.getFriend());
-
+                Server.userSession.put(messageUser.ID_SRC, user);
+                onlineFriendsList(socketUser, messageUser, user.getFriend());
+            }
 
         }
         else{
-            messageUser.type = (byte)104;
+            messageUser.type = TypeMessage.ERROR;
 
                 OutputStream out = socketUser.getOutputStream();
                 out.write(messageUser.toByte());
@@ -203,6 +236,10 @@ public class NewConnection implements Runnable , INewConnection {
         User userSrc = Server.userSession.get(messageDest.ID_SRC);
         ArrayList<Friend> friends = userSrc.getFriend();
         int size = friends.size();
+        if(!isConnected(userSrc))
+        {
+            return;
+        }
         while (size!=0)
         {
             if(friends.get(size-1).id==messageDest.ID_DEST && friends.get(size-1).friendType==Friend.FRIEND)
@@ -222,15 +259,14 @@ public class NewConnection implements Runnable , INewConnection {
         if(incorrectDisconnected(socketDest,messageDest))
         {
 
-
-                messageDest.type = 106;
+                messageDest.type = TypeMessage.USEROFFLINE;
             OutputStream out = userSrc.getSocket().getOutputStream();
             out.write(messageDest.toByte());
             return;
         }
-                message.type = 102;
+            messageDest.type = TypeMessage.MESSAGE;
                 OutputStream Lout = socketDest.getOutputStream();
-                Lout.write(message.toByte());
+                Lout.write(messageDest.toByte());
 
 
         } catch (IOException e) {
@@ -243,12 +279,12 @@ public class NewConnection implements Runnable , INewConnection {
 
         switch (type)
         {
-            case (0):
+            case (Friend.FRIEND):
             {
                 mirrortype = Friend.FRIEND;
                 break;
              }
-            case (1):
+            case (Friend.REQUEST):
             {
                 mirrortype = Friend.UNACCEPTED;
                 break;
@@ -256,15 +292,12 @@ public class NewConnection implements Runnable , INewConnection {
         }
 
         User user1 = Server.userSession.get(messageReqest.ID_SRC);
-        User user2 = Server.userSession.get(messageReqest.ID_DEST);
-
 
 
         Friend friend = new Friend(messageReqest.MSG,messageReqest.ID_DEST,type);
         Friend user = new Friend(user1.login,user1.id,mirrortype);
 
         try {
-            CPS srcmessage = null;
             dbManager.addFriend(user, friend);
 
         }catch (IOException e)
@@ -281,7 +314,7 @@ public class NewConnection implements Runnable , INewConnection {
             Friend friend;
             int IDuser=0;
             IDuser = messageUser.ID_SRC;
-            String loginUser=null;
+            String loginUser = null;
             loginUser = messageUser.MSG;
             friends = dbManager.getFriendList(messageUser.ID_SRC);
             int size = friends.size();
@@ -296,7 +329,7 @@ public class NewConnection implements Runnable , INewConnection {
                 switch (friend.friendType)
                 {
 
-                    case (0) :{
+                    case (Friend.FRIEND) :{
                         if(user != null
                            && !incorrectDisconnected(user.getSocket(),new CPS(user.id)))
                         {
@@ -304,7 +337,7 @@ public class NewConnection implements Runnable , INewConnection {
                             Socket friendSocket = user.getSocket();
                             OutputStream outFriend = friendSocket.getOutputStream();
 
-                            messageUser.type = 105;
+                            messageUser.type = TypeMessage.USERONLINE;
                             messageUser.ID_SRC = IDuser;
                             messageUser.MSG = loginUser;
                             outFriend.write(messageUser.toByte());
@@ -316,7 +349,7 @@ public class NewConnection implements Runnable , INewConnection {
 
                         }else
                         {
-                            messageUser.type = 106;
+                            messageUser.type = TypeMessage.USEROFFLINE;
                             messageUser.ID_SRC=friend.id;
                             messageUser.MSG = friend.login;
                             out.write(messageUser.toByte());
@@ -325,16 +358,16 @@ public class NewConnection implements Runnable , INewConnection {
                         break;
                     }
 
-                    case (1):{
-                        messageUser.type = 107;
+                    case (Friend.REQUEST):{
+                        messageUser.type = TypeMessage.REQUESTONFRIEND;
                         messageUser.ID_SRC=friend.id;
                         messageUser.MSG = friend.login;
                         out.write(messageUser.toByte());
                         break;
                     }
 
-                    case  (2):{
-                        messageUser.type = 106;
+                    case  (Friend.UNACCEPTED):{
+                        messageUser.type = TypeMessage.USEROFFLINE;
                         messageUser.ID_SRC=friend.id;
                         messageUser.MSG = friend.login;
                         out.write(messageUser.toByte());
@@ -377,7 +410,7 @@ public class NewConnection implements Runnable , INewConnection {
         }
         else
         {
-            message.type=103;
+            testMessage.type=TypeMessage.DISCONNECT;
             OutputStream out = socketUser.getOutputStream();
             out.write(testMessage.toByte());
             out.write(testMessage.toByte());
@@ -431,7 +464,7 @@ public class NewConnection implements Runnable , INewConnection {
 
             while (size!=0)
             {
-                message.type = 108;
+                message.type = TypeMessage.SEARCHUSER;
                 message.ID_SRC = users.get(size-1).id;
                 message.MSG = users.get(size-1).login;
                 out.write(message.toByte());
@@ -458,27 +491,27 @@ public class NewConnection implements Runnable , INewConnection {
             buf = message.ID_SRC;
             message.ID_SRC = message.ID_DEST;
             message.ID_DEST = buf;
-            message.type = 106;
+            message.type = TypeMessage.USEROFFLINE;
             out.write(message.toByte());
             buf = message.ID_SRC;
             message.ID_SRC = message.ID_DEST;
             message.ID_DEST = buf;
 
             OutputStream out1 = user1.getSocket().getOutputStream();
-        if(user2 != null)
-        {
-            if(!incorrectDisconnected(user2.getSocket(),message))
-            {
-                OutputStream out2 = user2.getSocket().getOutputStream();
+        if(user2 != null) {
+            if (user2.statusConnections != true) {
+                if (!incorrectDisconnected(user2.getSocket(), message)) {
+                    OutputStream out2 = user2.getSocket().getOutputStream();
 
-                message.type = 107;
-                message.MSG = user1.login;
-                out2.write(message.toByte());
+                    message.type = TypeMessage.REQUESTONFRIEND;
+                    message.MSG = user1.login;
+                    out2.write(message.toByte());
 
 
                 }
 
             }
+        }
         }
      catch (IOException e) {
         e.printStackTrace();
@@ -495,34 +528,31 @@ public class NewConnection implements Runnable , INewConnection {
             OutputStream out1 = user1.getSocket().getOutputStream();
             Friend friend = new Friend(message.MSG,message.ID_DEST,Friend.FRIEND);
             user1.addFriendtoList(friend);
-            if(user2 != null)
+            if(isConnected(user2))
             {
-
-                if(!incorrectDisconnected(user2.getSocket(),message))
-                {
                     friend = new Friend(user1.login,user1.id,Friend.FRIEND);
                     user2.addFriendtoList(friend);
                     OutputStream out2 = user2.getSocket().getOutputStream();
 
-                    message.type = 105;
+                    message.type = TypeMessage.USERONLINE;
                     message.MSG = user1.login;
                     message.ID_SRC = user1.id;
                     message.ID_DEST = user2.id;
                     out2.write(message.toByte());
 
                     OutputStream out = user1.getSocket().getOutputStream();
-                    message.type = 105;
+                    message.type = TypeMessage.USERONLINE;
                     message.ID_SRC = user2.id;
                     message.ID_DEST = user1.id;
                     message.MSG = user2.login;
                     out.write(message.toByte());
 
                         return;
-                }
-
             }
+
+
             OutputStream out = user1.getSocket().getOutputStream();
-            message.type = 106;
+            message.type = TypeMessage.USEROFFLINE;
             message.ID_SRC = message.ID_DEST;
             out.write(message.toByte());
 
@@ -536,17 +566,16 @@ public class NewConnection implements Runnable , INewConnection {
 
     public void disconnectFriendList(Socket socketUser, CPS messageUser){
         User user = Server.userSession.get(messageUser.ID_SRC);
-        messageUser.type = 106;
+        messageUser.type = TypeMessage.USEROFFLINE;
         ArrayList<Friend> friendList = null;
         OutputStream outL = null;
         if(user!=null)
         {
             friendList = user.getFriend();
-            int i = friendList.size();
-            while(i!=0){
+            for(Friend usr : friendList){
                 try {
-                    User userF = Server.userSession.get(friendList.get(i-1).id);
-                    if(userF !=null) {
+                    User userF = Server.userSession.get(usr.id);
+                    if(isConnected(userF)) {
                         outL = userF.getSocket().getOutputStream();
                         outL.write(messageUser.toByte());
                     }
@@ -554,10 +583,30 @@ public class NewConnection implements Runnable , INewConnection {
                 {
 
                 }
-                i--;
             }
+
         }
 
 
+    }
+
+
+    boolean isConnected(User user)
+    {
+
+        if(user == null)
+        {
+            return false;
+        }
+        if(user.statusConnections)
+        {
+            return false;
+        }
+        if (incorrectDisconnected(user.getSocket(),new CPS(3)))
+        {
+            return false;
+        }
+
+        return true;
     }
 }

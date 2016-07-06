@@ -42,7 +42,7 @@ public class CPS implements ICPS {
         arraytype[0]=type;
 
         byte []arrMsg = contact(arraytype,intToByte(ID_SRC));
-        arrMsg= contact(arrMsg,intToByte(ID_DEST));
+        arrMsg = contact(arrMsg,intToByte(ID_DEST));
         arrMsg = contact(arrMsg,intToByte(MSG_LEN));
         arrMsg = contact(arrMsg,new byte[3]);
 

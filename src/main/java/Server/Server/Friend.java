@@ -8,9 +8,9 @@ package Server.Server;
 
 public class Friend {
 
-    public static int REQUEST =1;
-    public static int UNACCEPTED =2;
-    public static int FRIEND = 0;
+    public static final int REQUEST =1;
+    public static final int UNACCEPTED =2;
+    public static final int FRIEND = 0;
 
    public int friendType;
    public Integer id;

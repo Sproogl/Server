@@ -1,10 +1,13 @@
 package Server.Server;
+
 import Server.Protocol.CPS;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
 import java.util.Scanner;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 
@@ -17,6 +20,7 @@ public class Server {
     public static ConcurrentHashMap<Integer,User> userSession;
     private static Logger log = Logger.getLogger(Server.class.getName());
     ServerListeningThread serverThread;
+    public static long epoch;
     public Server(int port) {
 
         this.port = port;
@@ -36,10 +40,12 @@ public class Server {
         System.out.println("Server started \n");
 
         Scanner scan = new Scanner(System.in);
-        int s = 1;
-        System.out.print("Enter 0 for stopped server : ");
-        while(s!=0) {
-            s = scan.nextInt();
+        String s = "1";
+        while(!s.equals(new String("0"))) {
+
+            System.out.print("Enter 0 for stopped server : ");
+            s = scan.nextLine();
+
         }
         stop();
         System.out.println("Server stopped: ");

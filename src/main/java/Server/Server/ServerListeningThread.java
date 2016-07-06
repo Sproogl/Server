@@ -2,8 +2,6 @@ package Server.Server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +15,7 @@ public class ServerListeningThread extends Thread implements IServerListeningThr
     private ServerSocket serverSocket;
     private int port;
     private static Logger log = Logger.getLogger(ServerListeningThread.class.getName());
-    ThreadPoolExecutor executor;
+    private ThreadPoolExecutor executor;
     public ServerListeningThread(int port) {
 
         executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
